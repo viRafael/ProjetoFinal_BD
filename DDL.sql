@@ -15,7 +15,7 @@ CREATE TABLE BIBLIOTECA (
     cp_id_biblioteca SERIAL PRIMARY KEY,  
     nome varchar(60),  
     tempo_uso INT,  
-    ce_categoria INT, -- CHAVE ESTRANGEIRA   
+    ce_id_categoria INT, -- CHAVE ESTRANGEIRA   
     ce_id_perfil INT -- CHAVE ESTRANGEIRA   
 ); 
 
@@ -41,7 +41,7 @@ CREATE TABLE CATEGORIA (
 CREATE TABLE AMIGOS ( 
     cp_id_amigo SERIAL PRIMARY KEY,  
     dt_inicio varchar(8), 
-    ce_email INT -- CHAVE ESTRANGEIRA
+    ce_email varchar(40) NOT NULL -- CHAVE ESTRANGEIRA
 ); 
 
 -- Criar Tabela COMENTARIO
@@ -80,70 +80,83 @@ CREATE TABLE participar (
     ce_id_perfil INT -- CHAVE ESTRANGEIRA  
 ); 
 
--- TO DO: 
+
 -- ADICIONANDO AS CONTRAINS  
 
 -- Adicionando CONSTRAINS para PERFIL
 ALTER TABLE PERFIL 
 ADD FOREIGN KEY(ce_id_comentario) 
-REFERENCES PERFIL (ce_id_comentario);
+REFERENCES PERFIL (cp_id_comentario);
 
 ALTER TABLE PERFIL 
 ADD FOREIGN KEY(ce_id_conquista) 
-REFERENCES PERFIL (ce_id_conquista);
+REFERENCES PERFIL (cp_id_conquista);
 
 ALTER TABLE PERFIL 
 ADD FOREIGN KEY(ce_id_desejo) 
-REFERENCES PERFIL (ce_id_desejo);
+REFERENCES PERFIL (cp_id_desejo);
 
 -- Adicionando CONSTRAINS para BIBLIOTECA
 ALTER TABLE BIBLIOTECA 
 ADD FOREIGN KEY(ce_categoria) 
-REFERENCES undefined (ce_categoria);
+REFERENCES CATEGORIA (cp_id_categoria);
 
 ALTER TABLE BIBLIOTECA 
 ADD FOREIGN KEY(ce_id_perfil) 
-REFERENCES PERFIL (ce_id_perfil);
+REFERENCES PERFIL (cp_id_perfil);
 
 -- Adicionando CONSTRAINS para DESEJO
 ALTER TABLE DESEJO 
 ADD FOREIGN KEY(ce_categoria) 
-REFERENCES PERFIL (ce_categoria)
+REFERENCES CATEGORIA (cp_id_categoria);
+
+ALTER TABLE DESEJO 
+ADD FOREIGN KEY(ce_id_perfil) 
+REFERENCES PERFIL (cp_id_perfil);
 
 -- Adicionando CONSTRAINS para CATEGORIA
 ALTER TABLE CATEGORIA 
 ADD FOREIGN KEY(ce_id_desejo) 
-REFERENCES PERFIL (ce_id_desejo)
+REFERENCES PERFIL (cp_id_desejo);
 
 ALTER TABLE CATEGORIA 
 ADD FOREIGN KEY(ce_id_biblioteca) 
-REFERENCES PERFIL (ce_id_biblioteca)
+REFERENCES PERFIL (cp_id_biblioteca);
 
 -- Adicionando CONSTRAINS para AMIGOS
 ALTER TABLE AMIGOS 
-ADD FOREIGN KEY(ce_email FK) 
-REFERENCES PERFIL (ce_email FK)
+ADD FOREIGN KEY(ce_email) 
+REFERENCES PERFIL (email);
 
 -- Adicionando CONSTRAINS para COMENTARIO
 ALTER TABLE COMENTARIO 
 ADD FOREIGN KEY(ce_id_perfil) 
-REFERENCES undefined (ce_id_perfil)
+REFERENCES PERFIL (cp_id_perfil);
 
 -- Adicionando CONSTRAINS para CONQUISTA
 ALTER TABLE CONQUISTA 
 ADD FOREIGN KEY(ce_id_perfil) 
-REFERENCES undefined (ce_id_perfil)
+REFERENCES PERFIL (cp_id_perfil);
 
 -- Adicionando CONSTRAINS para GRUPO
 ALTER TABLE GRUPO ADD 
 FOREIGN KEY(ce_id_perfil_autor) 
-REFERENCES undefined (ce_id_perfil_autor)
+REFERENCES PERFIL (cp_id_perfil_autor);
 
 -- Adicionando CONSTRAINS para tem
 ALTER TABLE tem 
 ADD FOREIGN KEY(ce_id_amigo) 
-REFERENCES undefined (ce_id_amigo)
+REFERENCES PERFIL (cp_id_amigo);
 
 ALTER TABLE tem 
 ADD FOREIGN KEY(ce_id_perfil) 
-REFERENCES undefined (ce_id_perfil)
+REFERENCES PERFIL (cp_id_perfil);
+
+-- Adicionando CONSTRAINS para participar
+ALTER TABLE participar 
+ADD FOREIGN KEY(ce_id_grupo) 
+REFERENCES PERFIL (cp_id_grupo);
+
+ALTER TABLE participar 
+ADD FOREIGN KEY(ce_id_perfil) 
+REFERENCES PERFIL (cp_id_perfil);
