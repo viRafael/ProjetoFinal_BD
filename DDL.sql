@@ -22,7 +22,7 @@ CREATE TABLE DESEJO (
     nome varchar(60) NOT NULL,  
     descrição varchar(120),  
     preço INT,  
-    ce_id_categoria INT -- CHAVE ESTRANGEIRA 
+    ce_id_categoria INT, -- CHAVE ESTRANGEIRA 
     ce_id_perfil INT -- CHAVE ESTRANGEIRA  
 ); 
 
@@ -102,11 +102,11 @@ REFERENCES PERFIL (cp_id_perfil);
 -- Adicionando CONSTRAINS para CATEGORIA
 ALTER TABLE CATEGORIA 
 ADD FOREIGN KEY(ce_id_desejo) 
-REFERENCES PERFIL (cp_id_desejo);
+REFERENCES DESEJO (cp_id_desejo);
 
 ALTER TABLE CATEGORIA 
 ADD FOREIGN KEY(ce_id_biblioteca) 
-REFERENCES PERFIL (cp_id_biblioteca);
+REFERENCES BIBLIOTECA (cp_id_biblioteca);
 
 -- Adicionando CONSTRAINS para AMIGOS
 ALTER TABLE AMIGOS 
@@ -131,7 +131,7 @@ REFERENCES PERFIL (cp_id_perfil);
 -- Adicionando CONSTRAINS para tem
 ALTER TABLE tem 
 ADD FOREIGN KEY(ce_id_amigo) 
-REFERENCES PERFIL (cp_id_amigo);
+REFERENCES AMIGOS (cp_id_amigo);
 
 ALTER TABLE tem 
 ADD FOREIGN KEY(ce_id_perfil) 
@@ -140,7 +140,7 @@ REFERENCES PERFIL (cp_id_perfil);
 -- Adicionando CONSTRAINS para participar
 ALTER TABLE participar 
 ADD FOREIGN KEY(ce_id_grupo) 
-REFERENCES PERFIL (cp_id_grupo);
+REFERENCES GRUPO (cp_id_grupo);
 
 ALTER TABLE participar 
 ADD FOREIGN KEY(ce_id_perfil) 
