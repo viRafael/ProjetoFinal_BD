@@ -2,8 +2,8 @@
 CREATE TABLE PERFIL ( 
     cp_id_perfil SERIAL PRIMARY KEY,  
     nome varchar(20),  
-    apelido INT NOT NULL,  
-    email varchar(40) UNIQUE NOT NULL,  
+    apelido varchar(20) NOT NULL,  
+    email varchar(40) NOT NULL UNIQUE,  
     numero_telefone INT 
 ); 
 
@@ -38,8 +38,9 @@ CREATE TABLE CATEGORIA (
 -- Criar Tabela AMIGOS
 CREATE TABLE AMIGOS ( 
     cp_id_amigo SERIAL PRIMARY KEY,  
-    dt_inicio varchar(8), 
-    ce_email varchar(40) UNIQUE NOT NULL -- CHAVE ESTRANGEIRA
+    dt_inicio varchar(10), 
+    tempo_jogado_juntos INT,
+    ce_id_perfil INT
 ); 
 
 -- Criar Tabela COMENTARIO
@@ -109,9 +110,9 @@ ADD FOREIGN KEY(ce_id_biblioteca)
 REFERENCES BIBLIOTECA (cp_id_biblioteca);
 
 -- Adicionando CONSTRAINS para AMIGOS
-ALTER TABLE AMIGOS 
-ADD FOREIGN KEY(ce_email) 
-REFERENCES PERFIL (email);
+ALTER TABLE AMIGOS
+ADD FOREIGN KEY(ce_id_perfil) 
+REFERENCES PERFIL (cp_id_perfil);
 
 -- Adicionando CONSTRAINS para COMENTARIO
 ALTER TABLE COMENTARIO 
