@@ -30,9 +30,7 @@ CREATE TABLE DESEJO (
 CREATE TABLE CATEGORIA ( 
     cp_id_categoria SERIAL PRIMARY KEY,  
     nome varchar(120),  
-    descrição varchar(120),  
-    ce_id_desejo INT, -- CHAVE ESTRANGEIRA   
-    ce_id_biblioteca INT -- CHAVE ESTRANGEIRA   
+    descrição varchar(120)  
 ); 
 
 -- Criar Tabela AMIGOS
