@@ -11,7 +11,7 @@ FROM PERFIL;
 
 -- 3.
 -- Quais os usuários que tem o id 1, 3 ou 5?
-SELECT nm_usuario
+SELECT nome
 FROM PERFIL
 WHERE cp_id_perfil IN (1, 3, 5);
 
@@ -36,14 +36,13 @@ LEFT JOIN AMIGOS a ON p.cp_id_perfil = a.ce_id_perfil
 GROUP BY p.nome;
 
 -- 7.
--- Quais os nomes dos usuários que têm pelo menos um amigo que jogou mais de 100 horas? 
-SELECT nome
-FROM PERFIL
-WHERE cp_id_perfil IN (
-    SELECT ce_id_perfil
-    FROM AMIGOS
-    WHERE tempo_jogado_juntos > 100
-);
+-- Encontrar Usuários com Desejos em uma Categoria Específica
+SELECT p.nome AS nome_usuario, c.descrição AS descrição_categoria
+FROM PERFIL p
+JOIN DESEJO d ON p.cp_id_perfil = d.ce_id_perfil
+JOIN CATEGORIA c ON d.ce_id_categoria = c.cp_id_categoria
+WHERE c.nome = 'Categoria 20'
+GROUP BY p.nome, c.descrição;
 
 -- =========== Querrys avançadas ==========
 
