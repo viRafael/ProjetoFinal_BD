@@ -49,5 +49,6 @@ def full_backup():
       cur.close()
       conn.close()
 
+
 if __name__ == "__main__":
   full_backup()
