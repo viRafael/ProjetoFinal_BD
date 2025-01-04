@@ -1,13 +1,15 @@
 -- =========== Querrys basicas ==========
 -- 1. 
--- Queremos saber quais são os perfis no STM Verde
-SELECT * 
-FROM PERFIL;
+-- Listar os jogos da biblioteca com tempo de uso acima de um valor específico
+SELECT nome
+FROM BIBLIOTECA
+WHERE tempo_uso > 100; -- Substitua 100 pelo tempo desejado
 
 -- 2. 
--- Desses perfis queremos saber o nome do usuario e o email relacionado a ele
-SELECT nome, email
-FROM PERFIL;
+-- Listar todos os jogos na biblioteca de um determinado usuário (com ID específico)
+SELECT b.nome
+FROM BIBLIOTECA b
+WHERE b.ce_id_perfil = 42; -- Substitua 42 pelo ID do usuário
 
 -- 3.
 -- Quais os usuários que tem o id 1, 3 ou 5?
