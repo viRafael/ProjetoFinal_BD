@@ -3,6 +3,6 @@ FROM PERFIL p
 LEFT JOIN AMIGOS a ON p.cp_id_perfil = a.ce_id_perfil
 GROUP BY p.nome;
 
-SEM INDEX: 320 msec
-COM BTREE: 119 msec
-COM HASH: 198 msec
+-- SEM INDEX: 320 msec
+-- COM BTREE: 119 msec
+-- COM HASH: 198 msec
