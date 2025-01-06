@@ -38,7 +38,7 @@ def realizar_backup(database, usuario, senha, host='localhost', porta=5432, dire
         print(f"Erro ao executar o comando: {e}")
 
 # Exemplo de uso:
-database = "ProjetoBD"
+database = "ProjetoTeste"
 usuario = "postgres"
 senha = "rrmv2003"
 realizar_backup(database, usuario, senha)

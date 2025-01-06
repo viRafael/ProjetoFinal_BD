@@ -47,7 +47,7 @@ GRANT SELECT ON PARTICIPAR TO leitor;
 
 -- 5. 
 -- Permitir que os usuários se conectem ao banco de dados
-GRANT CONNECT ON DATABASE "ProjetoBD" TO admin, moderador, usuario_comum, leitor;
+GRANT CONNECT ON DATABASE "ProjetoTeste" TO admin, moderador, usuario_comum, leitor;
 GRANT USAGE ON SCHEMA public TO admin, moderador, usuario_comum, leitor;
 
 -- 6. 
