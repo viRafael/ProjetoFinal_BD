@@ -98,15 +98,6 @@ ALTER TABLE DESEJO
 ADD FOREIGN KEY(ce_id_perfil) 
 REFERENCES PERFIL (cp_id_perfil);
 
--- Adicionando CONSTRAINS para CATEGORIA
-ALTER TABLE CATEGORIA 
-ADD FOREIGN KEY(ce_id_desejo) 
-REFERENCES DESEJO (cp_id_desejo);
-
-ALTER TABLE CATEGORIA 
-ADD FOREIGN KEY(ce_id_biblioteca) 
-REFERENCES BIBLIOTECA (cp_id_biblioteca);
-
 -- Adicionando CONSTRAINS para AMIGOS
 ALTER TABLE AMIGOS
 ADD FOREIGN KEY(ce_id_perfil) 
