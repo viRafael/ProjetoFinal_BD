@@ -37,9 +37,8 @@ CREATE TABLE CATEGORIA (
 
 CREATE TABLE AMIGOS ( 
     cp_id_amigo SERIAL PRIMARY KEY,  
-    dt_inicio varchar(10), 
-    tempo_jogado_juntos INT,
-    ce_id_perfil INT -- CHAVE ESTRANGEIRA
+    ce_id_perfil INT, -- CHAVE ESTRANGEIRA
+    ce_nome_perfil varchar(20) -- CHAVE ESTRANGEIRA
 ); 
 
 CREATE TABLE GRUPO ( 
@@ -50,6 +49,8 @@ CREATE TABLE GRUPO (
 );  
 
 CREATE TABLE amigos_perfil ( 
+    tempo_jogado_juntos INT,
+    dt_inicio varchar(10), 
     ce_id_amigo INT,  -- CHAVE ESTRANGEIRA 
     ce_id_perfil INT  -- CHAVE ESTRANGEIRA 
 ); 
@@ -85,8 +86,13 @@ REFERENCES JOGOS (cp_id_jogo);
 
 -- Adicionando para AMIGOS
 ALTER TABLE AMIGOS
+ADD FOREIGN KEY(ce_nome_perfil) 
+REFERENCES PERFIL (nome);
+
+ALTER TABLE AMIGOS
 ADD FOREIGN KEY(ce_id_perfil) 
 REFERENCES PERFIL (cp_id_perfil);
+
 
 -- Adicionando para amigos_perfil
 ALTER TABLE amigos_perfil

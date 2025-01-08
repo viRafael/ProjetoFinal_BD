@@ -110,9 +110,40 @@ INSERT INTO PERFIL (nome, apelido, email, numero_telefone) VALUES
  ('Rodrigo Moreira', 'RodMor43', 'rodrigo.moreira43@outlook.com', 187653),
  ('Bruna Dias', 'BruDia44', 'bruna.dias44@yahoo.com.br', 8074080),
  ('Natália Santos', 'NatSan45', 'natália.santos45@hotmail.com', 42155),
- ('Vanessa Rodrigues', 'VanRod46', 'vanessa.rodrigues46@outlook.com', 13461778),        
- ('Cláudia Cardoso', 'CláCar47', 'cláudia.cardoso47@bol.com.br', 58541708),
- ('Roberto Fonseca', 'RobFon48', 'roberto.fonseca48@yahoo.com.br', 7331454),
+ ('Adriana Gonçalves', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001),
+ ('Ricardo Moreira', 'RicMor4', 'ricardo.moreira4@outlook.com', 2718738),     
+ ('Marcelo Gonçalves', 'MarGon5', 'marcelo.gonçalves5@yahoo.com.br', 02007166),
+ ('Marcelo Monteiro', 'MarMon6', 'marcelo.monteiro6@gmail.com', 554834),     
+ ('Thiago Moreira', 'ThiMor7', 'thiago.moreira7@yahoo.com.br', 20823352),      
+ ('Fernanda Dias', 'FerDia8', 'fernanda.dias8@hotmail.com', 3374020),
+ ('Natália Nunes', 'NatNun', 'natália.nunes@yahoo.com.br', 26744143),        
+ ('José Melo', 'JosMel10', 'josé.melo10@bol.com.br', 718448),
+ ('Ricardo Moreira', 'RicMor', 'ricardo.moreira@yahoo.com.br', 22458007),
+ ('Cristiane Carvalho', 'CriCar12', 'cristiane.carvalho12@hotmail.com', 37827218),      
+ ('Raquel Pereira', 'RaqPer13', 'raquel.pereira13@yahoo.com.br', 826367),
+ ('Sandra Cardoso', 'SanCar14', 'sandra.cardoso14@hotmail.com', 15066),
+ ('Márcio Henriques', 'MárHen15', 'márcio.henriques15@gmail.com', 541676),
+ ('Pedro Teixeira', 'PedTei16', 'pedro.teixeira16@bol.com.br', 6856837),
+ ('Raquel Moreira', 'RaqMor17', 'raquel.moreira17@bol.com.br', 61712622),
+ ('Raquel Santos', 'RaqSan18', 'raquel.santos18@outlook.com', 3642557),
+ ('Fábio Cruz', 'FábCru1', 'fábio.cruz1@yahoo.com.br', 58160585),
+ ('Cláudia Santos', 'CláSan20', 'cláudia.santos20@hotmail.com', 2021723),
+ ('Anderson Martins', 'AndMar21', 'anderson.martins21@yahoo.com.br', 84327327),
+ ('Renata Alves', 'RenAlv22', 'renata.alves22@gmail.com', 14325430),
+ ('Camila Nunes', 'CamNun23', 'camila.nunes23@hotmail.com', 6274456),
+ ('Julia Santos', 'JulSan24', 'julia.santos24@yahoo.com.br', 0027867),
+ ('Larissa Tavares', 'LarTav25', 'larissa.tavares25@gmail.com', 033881),
+ ('Márcio Araújo', 'MárAra26', 'márcio.araújo26@outlook.com', 13222),
+ ('Beatriz Azevedo', 'BeaAze27', 'beatriz.azevedo27@yahoo.com.br', 84718361),
+ ('Débora Marques', 'DébMar28', 'débora.marques28@outlook.com', 88472274),
+ ('Marcelo Marques', 'MarMar2', 'marcelo.marques2@outlook.com', 750764),
+ ('Amanda Rodrigues', 'AmaRod30', 'amanda.rodrigues30@yahoo.com.br', 37612686),
+ ('Fernanda Pinheiro', 'FerPin31', 'fernanda.pinheiro31@hotmail.com', 20838362),        
+ ('Vinícius Freitas', 'VinFre32', 'vinícius.freitas32@yahoo.com.br', 17714055),
+ ('Márcio Nunes', 'MárNun33', 'márcio.nunes33@outlook.com', 4774366),
+ ('Gabriel Alves', 'GabAlv34', 'gabriel.alves34@bol.com.br', 1753031),
+ ('Eduardo Vieira', 'EduVie35', 'eduardo.vieira35@outlook.com', 74434531),
+ ('Carlos Silva', 'CarSil36', 'carlos.silva36@gmail.com', 20062673),
  ('Pedro Rodrigues', 'PedRod4', 'pedro.rodrigues4@bol.com.br', 5827520),
  ('Fábio Monteiro', 'FábMon50', 'fábio.monteiro50@bol.com.br', 28356224),
  ('Guilherme Pinheiro', 'GuiPin51', 'guilherme.pinheiro51@hotmail.com', 84824581),      
@@ -120,11 +151,41 @@ INSERT INTO PERFIL (nome, apelido, email, numero_telefone) VALUES
  ('Juliana Moraes', 'JulMor53', 'juliana.moraes53@bol.com.br', 45471607),
  ('Alexandre Andrade', 'AleAnd54', 'alexandre.andrade54@yahoo.com.br', 78527184),       
  ('Thiago Silva', 'ThiSil55', 'thiago.silva55@bol.com.br', 4286273),
- ('Pedro Rocha', 'PedRoc56', 'pedro.rocha56@hotmail.com', 43387472),
- ('Marcelo Melo', 'MarMel57', 'marcelo.melo57@bol.com.br', 10054256),
- ('Fernanda Moreira', 'FerMor58', 'fernanda.moreira58@yahoo.com.br', 2581347),
- ('Beatriz Martins', 'BeaMar5', 'beatriz.martins5@hotmail.com', 67801244),
- ('Julia Fonseca', 'JulFon60', 'julia.fonseca60@outlook.com', 35218313),
+ ('Marcelo Martins', 'MarMar2', 'marcelo.martins2@hotmail.com', 8725214),     
+ ('Adriana Gonçalves', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001),
+ ('Ricardo Moreira', 'RicMor4', 'ricardo.moreira4@outlook.com', 2718738),     
+ ('Marcelo Gonçalves', 'MarGon5', 'marcelo.gonçalves5@yahoo.com.br', 02007166),
+ ('Marcelo Monteiro', 'MarMon6', 'marcelo.monteiro6@gmail.com', 554834),     
+ ('Thiago Moreira', 'ThiMor7', 'thiago.moreira7@yahoo.com.br', 20823352),      
+ ('Fernanda Dias', 'FerDia8', 'fernanda.dias8@hotmail.com', 3374020),
+ ('Natália Nunes', 'NatNun', 'natália.nunes@yahoo.com.br', 26744143),        
+ ('José Melo', 'JosMel10', 'josé.melo10@bol.com.br', 718448),
+ ('Ricardo Moreira', 'RicMor', 'ricardo.moreira@yahoo.com.br', 22458007),
+ ('Cristiane Carvalho', 'CriCar12', 'cristiane.carvalho12@hotmail.com', 37827218),      
+ ('Raquel Pereira', 'RaqPer13', 'raquel.pereira13@yahoo.com.br', 826367),
+ ('Sandra Cardoso', 'SanCar14', 'sandra.cardoso14@hotmail.com', 15066),
+ ('Márcio Henriques', 'MárHen15', 'márcio.henriques15@gmail.com', 541676),
+ ('Pedro Teixeira', 'PedTei16', 'pedro.teixeira16@bol.com.br', 6856837),
+ ('Raquel Moreira', 'RaqMor17', 'raquel.moreira17@bol.com.br', 61712622),
+ ('Raquel Santos', 'RaqSan18', 'raquel.santos18@outlook.com', 3642557),
+ ('Fábio Cruz', 'FábCru1', 'fábio.cruz1@yahoo.com.br', 58160585),
+ ('Cláudia Santos', 'CláSan20', 'cláudia.santos20@hotmail.com', 2021723),
+ ('Anderson Martins', 'AndMar21', 'anderson.martins21@yahoo.com.br', 84327327),
+ ('Renata Alves', 'RenAlv22', 'renata.alves22@gmail.com', 14325430),
+ ('Camila Nunes', 'CamNun23', 'camila.nunes23@hotmail.com', 6274456),
+ ('Julia Santos', 'JulSan24', 'julia.santos24@yahoo.com.br', 0027867),
+ ('Larissa Tavares', 'LarTav25', 'larissa.tavares25@gmail.com', 033881),
+ ('Márcio Araújo', 'MárAra26', 'márcio.araújo26@outlook.com', 13222),
+ ('Beatriz Azevedo', 'BeaAze27', 'beatriz.azevedo27@yahoo.com.br', 84718361),
+ ('Débora Marques', 'DébMar28', 'débora.marques28@outlook.com', 88472274),
+ ('Marcelo Marques', 'MarMar2', 'marcelo.marques2@outlook.com', 750764),
+ ('Amanda Rodrigues', 'AmaRod30', 'amanda.rodrigues30@yahoo.com.br', 37612686),
+ ('Fernanda Pinheiro', 'FerPin31', 'fernanda.pinheiro31@hotmail.com', 20838362),        
+ ('Vinícius Freitas', 'VinFre32', 'vinícius.freitas32@yahoo.com.br', 17714055),
+ ('Márcio Nunes', 'MárNun33', 'márcio.nunes33@outlook.com', 4774366),
+ ('Gabriel Alves', 'GabAlv34', 'gabriel.alves34@bol.com.br', 1753031),
+ ('Eduardo Vieira', 'EduVie35', 'eduardo.vieira35@outlook.com', 74434531),
+ ('Carlos Silva', 'CarSil36', 'carlos.silva36@gmail.com', 20062673),
  ('Fernanda Vicente', 'FerVic61', 'fernanda.vicente61@gmail.com', 50017231),
  ('Letícia Pires', 'LetPir62', 'letícia.pires62@bol.com.br', 84270376),
  ('Fábio Machado', 'FábMac63', 'fábio.machado63@hotmail.com', 61246367),
@@ -219,6 +280,7 @@ INSERT INTO JOGOS (nome, preco, data_lancamento, id_categoria) VALUES
 ('Mass Effect 5', 89.99, '2024-10-29', 8),
 ('The Elder Scrolls VI: Redfall', 99.99, '2025-06-24', 30);
 
+-- NÃO TESTADO 
 -- Popular tabela ACERVO
 INSERT INTO ACERVO (tipo, ce_id_perfil, ce_id_jogo, ce_id_conquista) VALUES
 ('Desejo', 1, 10, 5),
@@ -321,3 +383,124 @@ INSERT INTO ACERVO (tipo, ce_id_perfil, ce_id_jogo, ce_id_conquista) VALUES
 ('Comprado', 48, 23, 12),
 ('Comprado', 49, 44, 4),
 ('Comprado', 50, 30, 8);
+
+-- NÃO TESTADO 
+-- Adicionando para AMIGOS
+INSERT INTO AMIGOS (ce_id_perfil, ce_nome_perfil) VALUES
+(7, 'Fernanda Dias'), 1
+(29, 'Amanda Rodrigues'), 2 
+(15, 'Pedro Teixeira'), 3 
+(18, 'Fábio Cruz'), 4
+(23, 'Julia Santos'), 5 
+(14, 'Márcio Henriques'), 6
+(8, 'Natália Nunes'), 7
+(36, 'Carlos Silva'), 8 
+(10, 'Ricardo Moreira'), 9 
+(46, 'Adriana Gonçalves'), 10
+(1, 'Marcelo Martins'), 11
+(50, 'Thiago Moreira'), 12
+(2, 'José Melo'), 13
+(38, 'João Marques'),14
+(21, 'Renata Alves'),15
+(9, 'Raquel Pereira'),16
+(24, 'Larissa Tavares'),17
+(37, 'Débora Araújo'),18
+(4, 'Marcelo Monteiro'),19
+(31, 'Vinícius Freitas'),20
+(11, 'Cristiane Carvalho'),21
+(30, 'Fernanda Pinheiro'),22
+(28, 'Marcelo Marques'),23
+(39, 'Anderson Pinheiro'),24
+(19, 'Cláudia Santos'),25
+(3, 'Ricardo Moreira'),26
+(25, 'Márcio Araújo'),27
+(12, 'Raquel Santos'),28
+(16, 'Raquel Moreira'),29
+(44, 'Natália Santos');30
+
+-- NÃO TESTADO 
+-- Adicionando para AMIGOS
+INSERT INTO amigos_perfil (tempo_jogado_junto, dt_inicio, ce_id_amigo, ce_id_perfil) VALUES
+(123, "05/02/2024", 1, 29),
+(156, "15/01/2024", 3, 18),
+(274, "22/03/2024", 5, 14),
+(398, "10/04/2024", 7, 36),
+(312, "17/02/2024", 9, 46),
+(220, "01/03/2024", 11, 50),
+(150, "26/03/2024", 13, 38),
+(375, "12/02/2024", 15, 9),
+(291, "20/04/2024", 17, 37),
+(256, "30/03/2024", 19, 31),
+(369, "11/01/2024", 21, 30),
+(481, "29/02/2024", 23, 39),
+(112, "23/04/2024", 25, 3),
+(375, "16/03/2024", 27, 12),
+(257, "02/02/2024", 29, 44),
+(208, "03/01/2024", 1, 15),
+(399, "28/02/2024", 3, 18),
+(300, "14/03/2024", 5, 8),
+(156, "25/01/2024", 7, 10),
+(311, "31/03/2024", 9, 1),
+(475, "20/01/2024", 11, 2),
+(201, "21/02/2024", 13, 21),
+(218, "22/01/2024", 15, 24),
+(392, "19/03/2024", 17, 4),
+(125, "03/05/2024", 19, 11),
+(236, "04/04/2024", 21, 28),
+(167, "19/01/2024", 23, 19),
+(300, "08/02/2024", 25, 25),
+(167, "19/01/2024", 27, 16),
+(300, "08/02/2024", 29, 7);
+
+-- NÃO TESTADO 
+-- Adicionando para AMIGOS
+INSERT INTO GRUPO (nome, descrição, numero_participantes) VALUES 
+('Mestres do RPG', 'Para jogadores de RPG de mesa e online. Compartilhando histórias e dicas.', 75);
+('Estrategistas de Tabuleiro', 'Amantes de jogos de tabuleiro modernos e clássicos. Encontros e torneios.', 50),
+('Gamers de Ação', 'Para quem curte jogos de tiro, luta e aventura. Dicas e gameplays.', 120),
+('Simuladores de Voo', 'Pilotos virtuais compartilhando experiências e mods.', 35),
+('Fãs de MMORPGs', 'Junte-se a outros jogadores de MMORPGs. Raids, quests e muito mais.', 90),
+('Colecionadores de Games', 'Compartilhando coleções raras e informações sobre jogos antigos.', 60),
+('Desenvolvedores Indie', 'Espaço para desenvolvedores independentes mostrarem seus jogos.', 40),
+('Speedrunners BR', 'Comunidade de speedrunners brasileiros. Desafios e recordes.', 25),
+('Jogos de Terror', 'Para os fãs de jogos de terror e suspense. Discussões e gameplays.', 80),
+('Clássicos dos Games', 'Relembrando os jogos que marcaram época. Nostalgia garantida.', 100),
+('Mundo Nintendo', 'Para fãs dos consoles e jogos da Nintendo.', 110),
+('PlayStation Nation', 'Comunidade dedicada aos jogadores de PlayStation.', 130),
+('Xbox Brasil', 'Para a comunidade Xbox no Brasil.', 95),
+('PC Gamers Elite', 'Para jogadores de PC com configurações poderosas.', 70),
+('Jogos Mobile BR', 'Tudo sobre jogos para celular. Dicas e novidades.', 150),
+('eSports Brasil', 'Discussões e notícias sobre o cenário de eSports no Brasil.', 65),
+('Cosplayers Gamers', 'Mostrando os melhores cosplays inspirados em jogos.', 55),
+('Criadores de Conteúdo Gamer', 'Para streamers e youtubers de jogos divulgarem seus trabalhos.', 30),
+('Jogos de Luta BR', 'Comunidade de jogadores de jogos de luta no Brasil.', 45),
+('Fãs de Souls-like', 'Para quem gosta de desafios difíceis. Dicas e builds.', 60),
+('Indie Games Brasil', 'Apoiando e divulgando os jogos independentes brasileiros.', 85),
+('Retro Gamers Club', 'Relembrando os consoles e jogos antigos. Muita nostalgia.', 90),
+('Board Game Nights', 'Organizando noites de jogos de tabuleiro entre amigos.', 40),
+('Card Games Brasil', 'Para jogadores de card games colecionáveis e TCGs.', 75),
+('Game Devs Iniciantes', 'Espaço para quem está começando a desenvolver jogos.', 50),
+('Modding Community', 'Compartilhando mods e ferramentas para modificar jogos.', 35),
+('VR Gamers Brasil', 'Para os entusiastas de jogos de realidade virtual.', 20),
+('Crossplay BR', 'Jogando juntos independente da plataforma.', 100),
+('Game Photography', 'Compartilhando belas capturas de tela de jogos.', 60),
+('Análise de Jogos', 'Debates e análises sobre os jogos mais recentes.', 70),
+('Sekiro BR', 'Para jogadores de Sekiro: Shadows Die Twice no Brasil.', 45);
+
+-- NÃO TESTADO 
+-- Adicionando para grupos_perfil
+-- Calcula o número total de grupos e perfis
+DO $$ 
+DECLARE
+    num_grupos INT;
+    num_perfis INT;
+BEGIN
+    SELECT COUNT(*) INTO num_grupos FROM GRUPO;
+    SELECT COUNT(*) INTO num_perfis FROM PERFIL;
+
+    -- Insere registros aleatórios na tabela grupo_perfil
+    INSERT INTO grupo_perfil (ce_id_grupo, ce_id_perfil)
+    SELECT (random() * (num_grupos - 1) + 1)::int, (random() * (num_perfis - 1) + 1)::int
+    FROM generate_series(1, 500); -- Insere 500 registros aleatórios
+
+END $$;
