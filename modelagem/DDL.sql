@@ -1,137 +1,107 @@
--- Criar Tabela PERFIL
 CREATE TABLE PERFIL ( 
     cp_id_perfil SERIAL PRIMARY KEY,  
     nome varchar(20),  
     apelido varchar(20) NOT NULL,  
     email varchar(40) NOT NULL UNIQUE,  
-    numero_telefone INT 
+    numero_telefone INT,  
+    ce_id_acervo INT -- CHAVE ESTRANGEIRA
 ); 
 
--- Criar Tabela BIBLIOTECA
-CREATE TABLE BIBLIOTECA ( 
-    cp_id_biblioteca SERIAL PRIMARY KEY,  
-    nome varchar(60),  
-    tempo_uso INT,  
-    ce_id_categoria INT, -- CHAVE ESTRANGEIRA   
-    ce_id_perfil INT -- CHAVE ESTRANGEIRA   
+CREATE TABLE JOGOS ( 
+    cp_id_jogo SERIAL PRIMARY KEY,  
+    nome varchar(80) NOT NULL,  
+    preco INT,  
+    data_lancamento VARCHAR(10),
+    ce_id_categoria INT -- CHAVE ESTRANGEIRA  
 ); 
 
--- Criar Tabela DESEJO
-CREATE TABLE DESEJO ( 
-    cp_id_desejo SERIAL PRIMARY KEY,  
-    nome varchar(60) NOT NULL,  
-    descrição varchar(120),  
-    preço INT,  
-    ce_id_categoria INT, -- CHAVE ESTRANGEIRA 
-    ce_id_perfil INT -- CHAVE ESTRANGEIRA  
+CREATE TABLE CONQUISTA ( 
+    cp_id_conquista SERIAL PRIMARY KEY,  
+    nome varchar(60) NOT NULL, 
+    descrição varchar(120) 
 ); 
 
--- Criar Tabela CATEGORIA
+CREATE TABLE ACERVO ( 
+    cp_id_acervo SERIAL PRIMARY KEY, 
+    tipo varchar(10),
+    ce_id_perfil INT, -- CHAVE ESTRANGEIRA  
+    ce_id_jogo INT, -- CHAVE ESTRANGEIRA  
+    ce_id_conquista INT -- CHAVE ESTRANGEIRA
+);
+
 CREATE TABLE CATEGORIA ( 
     cp_id_categoria SERIAL PRIMARY KEY,  
-    nome varchar(120),  
+    nome varchar(120) NOT NULL,  
     descrição varchar(120)  
 ); 
 
--- Criar Tabela AMIGOS
 CREATE TABLE AMIGOS ( 
     cp_id_amigo SERIAL PRIMARY KEY,  
     dt_inicio varchar(10), 
     tempo_jogado_juntos INT,
-    ce_id_perfil INT
+    ce_id_perfil INT -- CHAVE ESTRANGEIRA
 ); 
 
--- Criar Tabela COMENTARIO
-CREATE TABLE COMENTARIO ( 
-    cp_id_comentario SERIAL PRIMARY KEY,  
-    titulo varchar(60),
-    conteudo varchar(120),  
-    ce_id_perfil INT -- CHAVE ESTRANGEIRA  
-); 
-
--- Criar Tabela CONQUISTA
-CREATE TABLE CONQUISTA ( 
-    cp_id_conquista SERIAL PRIMARY KEY,  
-    nome varchar(60), 
-    descrição varchar(120), 
-    ce_id_perfil INT -- CHAVE ESTRANGEIRA     
-); 
-
--- Criar Tabela GRUPO
 CREATE TABLE GRUPO ( 
     cp_id_grupo SERIAL PRIMARY KEY,  
-    nome varchar(20),  
-    descrição varchar(120),  
-    ce_id_perfil_autor INT -- CHAVE ESTRANGEIRA   
+    nome varchar(20) NOT NULL,  
+    descrição varchar(120),
+    numero_participantes INT
+);  
+
+CREATE TABLE amigos_perfil ( 
+    ce_id_amigo INT,  -- CHAVE ESTRANGEIRA 
+    ce_id_perfil INT  -- CHAVE ESTRANGEIRA 
 ); 
 
--- Criar Tabela tem
-CREATE TABLE tem ( 
-    ce_id_amigo INT, -- CHAVE ESTRANGEIRA
-    ce_id_perfil INT -- CHAVE ESTRANGEIRA 
-); 
-
--- Criar Tabela participar
-CREATE TABLE participar ( 
-    ce_id_grupo INT, -- CHAVE ESTRANGEIRA 
+CREATE TABLE grupo_perfil ( 
+    ce_id_grupo INT, -- CHAVE ESTRANGEIRA  
     ce_id_perfil INT -- CHAVE ESTRANGEIRA  
 ); 
 
+-- ADICIONANDO AS CONTRAINS
+-- Adicionando para PERFIL
+ALTER TABLE PERFIL
+ADD FOREIGN KEY(ce_id_acervo) 
+REFERENCES ACERVO (cp_id_acervo);
 
--- ADICIONANDO AS CONTRAINS  
-
--- Adicionando CONSTRAINS para BIBLIOTECA
-ALTER TABLE BIBLIOTECA 
+-- Adicionando para JOGOS
+ALTER TABLE JOGOS
 ADD FOREIGN KEY(ce_id_categoria) 
 REFERENCES CATEGORIA (cp_id_categoria);
 
-ALTER TABLE BIBLIOTECA 
+-- Adicionando para ACERVO
+ALTER TABLE ACERVO
 ADD FOREIGN KEY(ce_id_perfil) 
 REFERENCES PERFIL (cp_id_perfil);
 
--- Adicionando CONSTRAINS para DESEJO
-ALTER TABLE DESEJO 
-ADD FOREIGN KEY(ce_id_categoria) 
-REFERENCES CATEGORIA (cp_id_categoria);
+ALTER TABLE ACERVO
+ADD FOREIGN KEY(ce_id_conquista) 
+REFERENCES CONQUISTA (cp_id_conquista);
 
-ALTER TABLE DESEJO 
-ADD FOREIGN KEY(ce_id_perfil) 
-REFERENCES PERFIL (cp_id_perfil);
+ALTER TABLE ACERVO
+ADD FOREIGN KEY(ce_id_jogo) 
+REFERENCES JOGOS (cp_id_jogo);
 
--- Adicionando CONSTRAINS para AMIGOS
+-- Adicionando para AMIGOS
 ALTER TABLE AMIGOS
 ADD FOREIGN KEY(ce_id_perfil) 
 REFERENCES PERFIL (cp_id_perfil);
 
--- Adicionando CONSTRAINS para COMENTARIO
-ALTER TABLE COMENTARIO 
+-- Adicionando para amigos_perfil
+ALTER TABLE amigos_perfil
 ADD FOREIGN KEY(ce_id_perfil) 
 REFERENCES PERFIL (cp_id_perfil);
 
--- Adicionando CONSTRAINS para CONQUISTA
-ALTER TABLE CONQUISTA 
-ADD FOREIGN KEY(ce_id_perfil) 
-REFERENCES PERFIL (cp_id_perfil);
-
--- Adicionando CONSTRAINS para GRUPO
-ALTER TABLE GRUPO 
-ADD FOREIGN KEY(ce_id_perfil_autor) 
-REFERENCES PERFIL (cp_id_perfil);
-
--- Adicionando CONSTRAINS para tem
-ALTER TABLE tem 
+ALTER TABLE amigos_perfil
 ADD FOREIGN KEY(ce_id_amigo) 
 REFERENCES AMIGOS (cp_id_amigo);
 
-ALTER TABLE tem 
+-- Adicionando para grupo_perfil
+ALTER TABLE grupo_perfil
 ADD FOREIGN KEY(ce_id_perfil) 
 REFERENCES PERFIL (cp_id_perfil);
 
--- Adicionando CONSTRAINS para participar
-ALTER TABLE participar 
+ALTER TABLE grupo_perfil
 ADD FOREIGN KEY(ce_id_grupo) 
 REFERENCES GRUPO (cp_id_grupo);
-
-ALTER TABLE participar 
-ADD FOREIGN KEY(ce_id_perfil) 
-REFERENCES PERFIL (cp_id_perfil);

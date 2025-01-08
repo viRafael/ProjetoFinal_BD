@@ -1,185 +1,227 @@
--- 1. Tabela PERFIL (já implementado na resposta anterior)
-ALTER TABLE PERFIL ALTER COLUMN apelido TYPE VARCHAR(20); -- Garante a alteração
+-- Popular tabela CATEGORIA
+INSERT INTO CATEGORIA (nome, descrição) VALUES
+('Ação', 'Jogos com muita ação e combate.'),
+('Tiro em Primeira Pessoa (FPS)', 'Jogos de tiro com perspectiva em primeira pessoa.'),
+('Tiro em Terceira Pessoa (TPS)', 'Jogos de tiro com perspectiva em terceira pessoa.'),
+('Aventura', 'Jogos com foco em exploração e narrativa.'),
+('Aventura em Mundo Aberto', 'Jogos de aventura com vastos mundos para explorar.'),
+('RPG', 'Jogos de interpretação de papéis com progressão de personagem.'),
+('MMORPG', 'RPGs online massivos para múltiplos jogadores.'),
+('RPG de Ação', 'Combinação de elementos de RPG e ação.'),
+('Estratégia', 'Jogos que exigem planejamento e tática.'),
+('Estratégia em Tempo Real (RTS)', 'Jogos de estratégia com ação em tempo real.'),
+('Estratégia Baseada em Turnos', 'Jogos de estratégia com turnos para cada jogador.'),
+('Simulação', 'Jogos que simulam atividades da vida real.'),
+('Simulação de Voo', 'Simulação de pilotagem de aeronaves.'),
+('Simulação de Corrida', 'Simulação de corridas de carro ou outros veículos.'),
+('Esporte', 'Jogos que simulam esportes reais.'),
+('Esportes de Luta', 'Jogos de luta com mecânicas esportivas.'),
+('Esportes Radicais', 'Jogos que simulam esportes radicais como skate e snowboard.'),
+('Puzzle', 'Jogos de quebra-cabeça e lógica.'),
+('Plataforma', 'Jogos com foco em pulos e movimentação em plataformas.'),
+('Luta', 'Jogos de combate corpo a corpo.'),
+('Horror', 'Jogos com temática de terror e suspense.'),
+('Sobrevivência', 'Jogos com foco em sobrevivência em ambientes hostis.'),
+('Indie', 'Jogos independentes com estilos únicos.'),
+('Casual', 'Jogos fáceis de jogar e com curta duração.'),
+('Música', 'Jogos com foco em ritmo e música.'),
+('Dança', 'Jogos que simulam dança.'),
+('Tabuleiro', 'Adaptações digitais de jogos de tabuleiro.'),
+('Cartas', 'Adaptações digitais de jogos de cartas.'),
+('Party Games', 'Jogos para jogar com amigos em festas.'),
+('Infantil', 'Jogos voltados para o público infantil.'),
 
-DO $$
-DECLARE
-    i integer := 1;
-BEGIN
-    WHILE i <= 200 LOOP
-        INSERT INTO PERFIL (nome, apelido, email, numero_telefone)
-        VALUES (
-            'Usuario ' || i,
-            'Apelido' || i,
-            'usuario' || i || '@exemplo.com',
-            floor(random() * 900000000) + 100000000
-        );
-        i := i + 1;
-    END LOOP;
-END $$;
+-- Popular tabela CONQUISTA
+INSERT INTO CONQUISTA (nome, descrição) VALUES
+('Primeiros Passos', 'Complete o tutorial.'),
+('Explorador Novato', 'Descubra 5 áreas secretas.'),
+('Colecionador Iniciante', 'Colete 10 itens.'),
+('Primeira Vitória', 'Vença sua primeira partida.'),
+('Aventureiro Curioso', 'Jogue por 10 horas.'),
+('Mestre da Exploração', 'Descubra 20 áreas secretas.'),
+('Colecionador Dedicado', 'Colete 50 itens.'),
+('Vitória Consistente', 'Vença 10 partidas consecutivas.'),
+('Maratonista de Jogos', 'Jogue por 50 horas.'),
+('Desafio Aceito', 'Complete 5 desafios difíceis.'),
+('Explorador Lendário', 'Descubra todas as áreas secretas.'),
+('Colecionador Mestre', 'Colete todos os itens raros.'),
+('Invencível', 'Vença 20 partidas consecutivas sem perder nenhuma.'),
+('Viciado em Games', 'Jogue por 100 horas.'),
+('Conquistador Supremo', 'Complete todos os desafios do jogo na dificuldade máxima.'),
+('Atirador de Elite', 'Acerte 100 tiros na cabeça.'),
+('Demolidor', 'Destrua 50 veículos.'),
+('Imparável', 'Elimine 20 inimigos sem morrer.'),
+('Mestre das Magias', 'Aprenda todas as magias disponíveis.'),
+('Guerreiro Lendário', 'Derrote o chefe final sem usar poções de cura.'),
+('Diplomata Nato', 'Complete todas as missões sem entrar em combate.'),
+('General Imbatível', 'Vença uma partida sem perder nenhuma unidade.'),
+('Conquistador Mundial', 'Domine todos os territórios do mapa.'),
+('Estrategista Mestre', 'Utilize todas as unidades do jogo de forma eficaz.'),
+('Artilheiro Nato', 'Marque 50 gols.'),
+('Defesa Implacável', 'Não sofra nenhum gol em 5 partidas seguidas.'),
+('Campeão Invencível', 'Vença o campeonato sem perder nenhuma partida.'),
+('Mestre dos Enigmas', 'Resolva todos os quebra-cabeças sem dicas.'),
+('Gênio da Lógica', 'Complete todos os puzzles em tempo recorde.'),
+('Desvendador de Mistérios', 'Descubra todos os segredos escondidos nos puzzles.');
 
--- 2. Tabela CATEGORIA
-DO $$
-DECLARE
-    i integer := 1;
-BEGIN
-    WHILE i <= 100 LOOP -- Menos categorias, para não gerar muitos relacionamentos desnecessários
-        INSERT INTO CATEGORIA (nome, descrição)
-        VALUES (
-            'Categoria ' || i,
-            'Descrição da Categoria ' || i
-        );
-        i := i + 1;
-    END LOOP;
-END $$;
+-- Popular tabela PERFIL
+INSERT INTO PERFIL (nome, apelido, email, numero_telefone) VALUES 
+ ('Marcelo Martins', 'MarMar2', 'marcelo.martins2@hotmail.com', 8725214),     
+ ('Adriana Gonçalves', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001),
+ ('Ricardo Moreira', 'RicMor4', 'ricardo.moreira4@outlook.com', 2718738),     
+ ('Marcelo Gonçalves', 'MarGon5', 'marcelo.gonçalves5@yahoo.com.br', 02007166),
+ ('Marcelo Monteiro', 'MarMon6', 'marcelo.monteiro6@gmail.com', 554834),     
+ ('Thiago Moreira', 'ThiMor7', 'thiago.moreira7@yahoo.com.br', 20823352),      
+ ('Fernanda Dias', 'FerDia8', 'fernanda.dias8@hotmail.com', 3374020),
+ ('Natália Nunes', 'NatNun', 'natália.nunes@yahoo.com.br', 26744143),        
+ ('José Melo', 'JosMel10', 'josé.melo10@bol.com.br', 718448),
+ ('Ricardo Moreira', 'RicMor', 'ricardo.moreira@yahoo.com.br', 22458007),
+ ('Cristiane Carvalho', 'CriCar12', 'cristiane.carvalho12@hotmail.com', 37827218),      
+ ('Raquel Pereira', 'RaqPer13', 'raquel.pereira13@yahoo.com.br', 826367),
+ ('Sandra Cardoso', 'SanCar14', 'sandra.cardoso14@hotmail.com', 15066),
+ ('Márcio Henriques', 'MárHen15', 'márcio.henriques15@gmail.com', 541676),
+ ('Pedro Teixeira', 'PedTei16', 'pedro.teixeira16@bol.com.br', 6856837),
+ ('Raquel Moreira', 'RaqMor17', 'raquel.moreira17@bol.com.br', 61712622),
+ ('Raquel Santos', 'RaqSan18', 'raquel.santos18@outlook.com', 3642557),
+ ('Fábio Cruz', 'FábCru1', 'fábio.cruz1@yahoo.com.br', 58160585),
+ ('Cláudia Santos', 'CláSan20', 'cláudia.santos20@hotmail.com', 2021723),
+ ('Anderson Martins', 'AndMar21', 'anderson.martins21@yahoo.com.br', 84327327),
+ ('Renata Alves', 'RenAlv22', 'renata.alves22@gmail.com', 14325430),
+ ('Camila Nunes', 'CamNun23', 'camila.nunes23@hotmail.com', 6274456),
+ ('Julia Santos', 'JulSan24', 'julia.santos24@yahoo.com.br', 0027867),
+ ('Larissa Tavares', 'LarTav25', 'larissa.tavares25@gmail.com', 033881),
+ ('Márcio Araújo', 'MárAra26', 'márcio.araújo26@outlook.com', 13222),
+ ('Beatriz Azevedo', 'BeaAze27', 'beatriz.azevedo27@yahoo.com.br', 84718361),
+ ('Débora Marques', 'DébMar28', 'débora.marques28@outlook.com', 88472274),
+ ('Marcelo Marques', 'MarMar2', 'marcelo.marques2@outlook.com', 750764),
+ ('Amanda Rodrigues', 'AmaRod30', 'amanda.rodrigues30@yahoo.com.br', 37612686),
+ ('Fernanda Pinheiro', 'FerPin31', 'fernanda.pinheiro31@hotmail.com', 20838362),        
+ ('Vinícius Freitas', 'VinFre32', 'vinícius.freitas32@yahoo.com.br', 17714055),
+ ('Márcio Nunes', 'MárNun33', 'márcio.nunes33@outlook.com', 4774366),
+ ('Gabriel Alves', 'GabAlv34', 'gabriel.alves34@bol.com.br', 1753031),
+ ('Eduardo Vieira', 'EduVie35', 'eduardo.vieira35@outlook.com', 74434531),
+ ('Carlos Silva', 'CarSil36', 'carlos.silva36@gmail.com', 20062673),
+ ('Paulo Barbosa', 'PauBar37', 'paulo.barbosa37@bol.com.br', 71038786),
+ ('Débora Araújo', 'DébAra38', 'débora.araújo38@hotmail.com', 7823718),
+ ('João Marques', 'JoãMar3', 'joão.marques3@yahoo.com.br', 38025413),
+ ('Anderson Pinheiro', 'AndPin40', 'anderson.pinheiro40@hotmail.com', 13101660),        
+ ('Guilherme Henriques', 'GuiHen41', 'guilherme.henriques41@bol.com.br', 35347824),     
+ ('Ana Coelho', 'AnaCoe42', 'ana.coelho42@outlook.com', 83886002),
+ ('Rodrigo Moreira', 'RodMor43', 'rodrigo.moreira43@outlook.com', 187653),
+ ('Bruna Dias', 'BruDia44', 'bruna.dias44@yahoo.com.br', 8074080),
+ ('Natália Santos', 'NatSan45', 'natália.santos45@hotmail.com', 42155),
+ ('Vanessa Rodrigues', 'VanRod46', 'vanessa.rodrigues46@outlook.com', 13461778),        
+ ('Cláudia Cardoso', 'CláCar47', 'cláudia.cardoso47@bol.com.br', 58541708),
+ ('Roberto Fonseca', 'RobFon48', 'roberto.fonseca48@yahoo.com.br', 7331454),
+ ('Pedro Rodrigues', 'PedRod4', 'pedro.rodrigues4@bol.com.br', 5827520),
+ ('Fábio Monteiro', 'FábMon50', 'fábio.monteiro50@bol.com.br', 28356224),
+ ('Guilherme Pinheiro', 'GuiPin51', 'guilherme.pinheiro51@hotmail.com', 84824581),      
+ ('Lucas Lopes', 'LucLop52', 'lucas.lopes52@bol.com.br', 86884842),
+ ('Juliana Moraes', 'JulMor53', 'juliana.moraes53@bol.com.br', 45471607),
+ ('Alexandre Andrade', 'AleAnd54', 'alexandre.andrade54@yahoo.com.br', 78527184),       
+ ('Thiago Silva', 'ThiSil55', 'thiago.silva55@bol.com.br', 4286273),
+ ('Pedro Rocha', 'PedRoc56', 'pedro.rocha56@hotmail.com', 43387472),
+ ('Marcelo Melo', 'MarMel57', 'marcelo.melo57@bol.com.br', 10054256),
+ ('Fernanda Moreira', 'FerMor58', 'fernanda.moreira58@yahoo.com.br', 2581347),
+ ('Beatriz Martins', 'BeaMar5', 'beatriz.martins5@hotmail.com', 67801244),
+ ('Julia Fonseca', 'JulFon60', 'julia.fonseca60@outlook.com', 35218313),
+ ('Fernanda Vicente', 'FerVic61', 'fernanda.vicente61@gmail.com', 50017231),
+ ('Letícia Pires', 'LetPir62', 'letícia.pires62@bol.com.br', 84270376),
+ ('Fábio Machado', 'FábMac63', 'fábio.machado63@hotmail.com', 61246367),
+ ('Carlos Monteiro', 'CarMon64', 'carlos.monteiro64@outlook.com', 36241604),
+ ('Larissa Azevedo', 'LarAze65', 'larissa.azevedo65@bol.com.br', 03165),
+ ('Cristiane Sousa', 'CriSou66', 'cristiane.sousa66@outlook.com', 7727726),
+ ('Vanessa Gomes', 'VanGom67', 'vanessa.gomes67@bol.com.br', 33620025),
+ ('Marcelo Vicente', 'MarVic68', 'marcelo.vicente68@yahoo.com.br', 0068768),
+ ('Fábio Moraes', 'FábMor6', 'fábio.moraes6@outlook.com', 6877074),
+ ('Simone Souza', 'SimSou70', 'simone.souza70@hotmail.com', 11085633),
+ ('Daniel Fernandes', 'DanFer71', 'daniel.fernandes71@gmail.com', 088468),
+ ('Bruno Teixeira', 'BruTei72', 'bruno.teixeira72@hotmail.com', 42173561),
+ ('Paulo Ribeiro', 'PauRib73', 'paulo.ribeiro73@outlook.com', 7744225),
+ ('Ricardo Rodrigues', 'RicRod74', 'ricardo.rodrigues74@outlook.com', 766573),        
+ ('Simone Dias', 'SimDia75', 'simone.dias75@hotmail.com', 4414364),
+ ('Alexandre Machado', 'AleMac76', 'alexandre.machado76@outlook.com', 30848671),        
+ ('Bruna Rodrigues', 'BruRod77', 'bruna.rodrigues77@hotmail.com', 53455328),
+ ('Alexandre Carvalho', 'AleCar78', 'alexandre.carvalho78@hotmail.com', 62725821),      
+ ('José Marques', 'JosMar7', 'josé.marques7@bol.com.br', 357503),
+ ('Guilherme Santos', 'GuiSan80', 'guilherme.santos80@yahoo.com.br', 2467440),
+ ('Fernanda Silva', 'FerSil81', 'fernanda.silva81@hotmail.com', 2615738),
+ ('Juliana Vicente', 'JulVic82', 'juliana.vicente82@outlook.com', 81787431),
+ ('Amanda Andrade', 'AmaAnd83', 'amanda.andrade83@yahoo.com.br', 0008488),
+ ('Natália Correia', 'NatCor84', 'natália.correia84@bol.com.br', 577206),
+ ('Cláudia Pinheiro', 'CláPin85', 'cláudia.pinheiro85@hotmail.com', 5475730),
+ ('José Araújo', 'JosAra86', 'josé.araújo86@hotmail.com', 7354013),
+ ('Patrícia Marques', 'PatMar87', 'patrícia.marques87@bol.com.br', 5236572),
+ ('Letícia Costa', 'LetCos88', 'letícia.costa88@bol.com.br', 71041667),
+ ('Bruna Teixeira', 'BruTei8', 'bruna.teixeira8@gmail.com', 1762807),
+ ('Felipe Cardoso', 'FelCar0', 'felipe.cardoso0@hotmail.com', 8041850),
+ ('Sandra Lima', 'SanLim1', 'sandra.lima1@gmail.com', 861852),
+ ('Juliana Melo', 'JulMel2', 'juliana.melo2@yahoo.com.br', 741653),
+ ('Amanda Campos', 'AmaCam3', 'amanda.campos3@outlook.com', 62553072),
+ ('Rodrigo Antunes', 'RodAnt4', 'rodrigo.antunes4@gmail.com', 8778552),
+ ('Marcelo Dias', 'MarDia5', 'marcelo.dias5@bol.com.br', 5457262),
+ ('Lucas Santos', 'LucSan6', 'lucas.santos6@gmail.com', 5761666),
+ ('Anderson Nascimento', 'AndNas7', 'anderson.nascimento7@yahoo.com.br', 3440516),   
+ ('Sérgio Gonçalves', 'SérGon8', 'sérgio.gonçalves8@yahoo.com.br', 06017070),
+ ('Ricardo Pereira', 'RicPer', 'ricardo.pereira@hotmail.com', 1413782),
+ ('Rafael Melo', 'RafMel100', 'rafael.melo100@hotmail.com', 771570);
 
--- 3. Tabela BIBLIOTECA
-DO $$
-DECLARE
-    i integer := 1;
-    perfil_id INTEGER;
-    categoria_id INTEGER;
-BEGIN
-    WHILE i <= 200 LOOP
-        SELECT cp_id_perfil INTO perfil_id FROM PERFIL ORDER BY RANDOM() LIMIT 1;
-        SELECT cp_id_categoria INTO categoria_id FROM CATEGORIA ORDER BY RANDOM() LIMIT 1;
-        INSERT INTO BIBLIOTECA (nome, tempo_uso, ce_id_categoria, ce_id_perfil)
-        VALUES (
-            'Biblioteca ' || i,
-            floor(random() * 240) + 60, -- Tempo de uso entre 60 e 300
-            categoria_id,
-            perfil_id
-        );
-        i := i + 1;
-    END LOOP;
-END $$;
+-- Popular tabela JOGOS
+INSERT INTO JOGOS (nome, preco, data_lancamento, id_categoria) VALUES
+('Guardiões da Galáxia: Batalha Final', 59.99, '2023-03-15', 15),
+('Call of Honor: Linha de Frente', 79.90, '2022-11-20', 7),
+('Need for Drift: Tokyo Nights', 49.95, '2024-06-10', 23),
+('Silent Hill: Ecos do Passado', 69.99, '2023-09-01', 12),
+('Star Command: Frota Estelar', 89.90, '2022-04-25', 8),
+('Harvest Valley: Contos da Fazenda', 39.99, '2024-01-12', 19),
+('Portal of Minds: Desafios Mentais', 29.90, '2023-07-18', 4),
+('Jump Force: Heróis Unidos', 54.99, '2022-08-05', 25),
+('Ultimate Fighting Championship 2024', 74.90, '2023-12-22', 11),
+('Resident Evil: Vila Maldita', 64.99, '2024-05-03', 17),
+('Days Gone: Estrada da Sobrevivência', 44.99, '2023-02-10', 2),
+('The Elder Scrolls VI: Domínio Perdido', 79.99, '2022-09-15', 3),
+('Counter-Strike: Global Offensive 2', 69.90, '2024-07-20', 29),
+('Subnautica: Below Zero', 59.95, '2023-05-01', 10),
+('Mass Effect: Andromeda 2', 84.90, '2022-06-25', 6),
+('Stardew Valley 2: Expansão Rural', 49.99, '2024-03-12', 20),
+('The Witness 2: Segredos da Ilha', 34.90, '2023-11-18', 5),
+('Celeste 2: Além das Nuvens', 59.99, '2022-12-05', 28),
+('EA Sports FIFA 2025', 79.90, '2023-04-22', 22),
+('Outlast 3: Profecia Sombria', 69.99, '2024-09-03', 14),
+('The Long Dark: Inverno Eterno', 49.99, '2023-08-10', 1),
+('Kingdom Come: Deliverance II', 84.99, '2022-01-15', 30),
+('Tom Clancy\'s Rainbow Six Siege 2', 69.90, '2024-10-20', 18),
+('BioShock 4: Ascensão das Cidades', 64.95, '2023-06-01', 16),
+('Halo Infinite 2: Guerra pela Galáxia', 89.90, '2022-07-25', 13),
+('Animal Crossing: Nova Vida Urbana', 54.99, '2024-02-12', 21),
+('Baba Is You 2: Desafios da Lógica', 39.90, '2023-10-18', 9),
+('Hollow Knight: Seda e Canções', 64.99, '2022-03-05', 27),
+('eFootball PES 2025', 84.90, '2023-09-22', 24),
+('Layers of Fear 3: Retratos da Loucura', 74.99, '2024-08-03', 11),
+('Cyberpunk 2077: Phantom Liberty 2', 89.99, '2025-01-15', 20),
+('Horizon Forbidden West 2: Terras Desconhecidas', 79.99, '2024-08-08', 2),
+('Death Stranding 2: Conexões Perdidas', 74.99, '2024-12-03', 26),
+('Detroit: Become Human 2', 69.99, '2025-05-10', 15),
+('The Last of Us Part III: Vingança Sombria', 89.99, '2024-07-25', 8),
+('Ghost of Tsushima 2: Lendas da Ilha', 79.99, '2025-02-18', 6),
+('Days Gone 2: O Retorno da Horda', 74.99, '2024-10-01', 12),
+('Uncharted 5: O Legado dos Ladrões', 84.99, '2025-04-05', 3),
+('Ratchet & Clank: Em Busca do Tempo', 69.99, '2024-11-19', 17),
+('Returnal 2: Ciclos da Vingança', 79.99, '2025-07-02', 28),
+('Grand Theft Auto VI: Vice City 2', 99.90, '2025-03-27', 9),
+('Red Dead Redemption 3: Lendas do Oeste', 89.90, '2024-11-05', 4),
+('God of War: Ragnarök - Valhalla', 79.99, '2024-09-19', 1),
+('Spider-Man 3: Teias do Destino', 84.99, '2025-06-12', 23),
+('The Legend of Zelda: Tears of the Kingdom - Expansão', 74.99, '2024-04-26', 19),
+('Final Fantasy VII Remake Part 3', 99.99, '2025-09-25', 25),
+('Kingdom Hearts IV: A Busca pela Luz', 89.99, '2024-12-17', 22),
+('Dragon Age: Dreadwolf', 84.99, '2025-03-04', 14),
+('Mass Effect 5', 89.99, '2024-10-29', 8),
+('The Elder Scrolls VI: Redfall', 99.99, '2025-06-24', 30);
 
--- 4. Tabela DESEJO (similar a BIBLIOTECA)
-DO $$
-DECLARE
-    i integer := 1;
-    perfil_id INTEGER;
-    categoria_id INTEGER;
-BEGIN
-    WHILE i <= 200 LOOP
-        SELECT cp_id_perfil INTO perfil_id FROM PERFIL ORDER BY RANDOM() LIMIT 1;
-        SELECT cp_id_categoria INTO categoria_id FROM CATEGORIA ORDER BY RANDOM() LIMIT 1;
-        INSERT INTO DESEJO (nome, descrição, preço, ce_id_categoria, ce_id_perfil)
-        VALUES (
-            'Desejo ' || i,
-            'Descrição do Desejo ' || i,
-            floor(random() * 300) + 50, -- Preço entre 50 e 350
-            categoria_id,
-            perfil_id
-        );
-        i := i + 1;
-    END LOOP;
-END $$;
-
--- 5. Tabela AMIGOS (relaciona emails existentes em PERFIL)
-DO $$
-DECLARE
-    i integer := 1;
-    perfil1_id INTEGER;
-    perfil2_id INTEGER;
-BEGIN
-    WHILE i <= 100 LOOP -- Gera 50 pares de amizades (100 registros na tabela AMIGOS)
-        SELECT cp_id_perfil INTO perfil1_id FROM PERFIL ORDER BY RANDOM() LIMIT 1;
-        SELECT cp_id_perfil INTO perfil2_id FROM PERFIL WHERE cp_id_perfil != perfil1_id ORDER BY RANDOM() LIMIT 1;
-
-        -- Insere a amizade do ponto de vista do perfil1
-        INSERT INTO AMIGOS (dt_inicio, tempo_jogado_juntos, ce_id_perfil)
-        VALUES 
-            ('2023-01-01', 
-            floor(random() * 501) + 100, -- Intervalo entre 100 e 600 (inclusive)
-            perfil1_id
-        );
-
-        
-        i := i + 1;
-    END LOOP;
-END $$;
-
--- 6. Tabela COMENTARIO
-DO $$
-DECLARE
-    i integer := 1;
-    perfil_id INTEGER;
-BEGIN
-    WHILE i <= 200 LOOP
-        SELECT cp_id_perfil INTO perfil_id FROM PERFIL ORDER BY RANDOM() LIMIT 1;
-        INSERT INTO COMENTARIO (titulo, conteudo, ce_id_perfil)
-        VALUES (
-            'Comentário ' || i,
-            'Conteúdo do Comentário ' || i,
-            perfil_id
-        );
-        i := i + 1;
-    END LOOP;
-END $$;
-
--- 7. Tabela CONQUISTA
-DO $$
-DECLARE
-    i integer := 1;
-    perfil_id INTEGER;
-BEGIN
-    WHILE i <= 200 LOOP
-        SELECT cp_id_perfil INTO perfil_id FROM PERFIL ORDER BY RANDOM() LIMIT 1;
-        INSERT INTO CONQUISTA (nome, descrição, ce_id_perfil)
-        VALUES (
-            'Conquista ' || i,
-            'Descrição da Conquista ' || i,
-            perfil_id
-        );
-        i := i + 1;
-    END LOOP;
-END $$;
-
--- 8. Tabela GRUPO
-DO $$
-DECLARE
-    i integer := 1;
-    perfil_id INTEGER;
-BEGIN
-    WHILE i <= 100 LOOP
-        SELECT cp_id_perfil INTO perfil_id FROM PERFIL ORDER BY RANDOM() LIMIT 1;
-        INSERT INTO GRUPO (nome, descrição, ce_id_perfil_autor)
-        VALUES (
-            'Grupo ' || i,
-            'Descrição do Grupo ' || i,
-            perfil_id
-        );
-        i := i + 1;
-    END LOOP;
-END $$;
-
--- 9. Tabela tem (relacionamento entre AMIGOS e PERFIL)
-DO $$
-DECLARE
-  i integer := 1;
-  amigo_id INTEGER;
-  perfil_id INTEGER;
-BEGIN
-  WHILE i <= 200 LOOP
-    SELECT cp_id_amigo INTO amigo_id FROM AMIGOS ORDER BY RANDOM() LIMIT 1;
-    SELECT cp_id_perfil INTO perfil_id FROM PERFIL ORDER BY RANDOM() LIMIT 1;
-    INSERT INTO tem (ce_id_amigo, ce_id_perfil) VALUES (amigo_id, perfil_id);
-    i := i + 1;
-  END LOOP;
-END $$;
-
-
--- 10. Tabela participar (relacionamento entre GRUPO e PERFIL)
-DO $$
-DECLARE
-  i integer := 1;
-  grupo_id INTEGER;
-  perfil_id INTEGER;
-BEGIN
-  WHILE i <= 200 LOOP
-    SELECT cp_id_grupo INTO grupo_id FROM GRUPO ORDER BY RANDOM() LIMIT 1;
-    SELECT cp_id_perfil INTO perfil_id FROM PERFIL ORDER BY RANDOM() LIMIT 1;
-    INSERT INTO participar (ce_id_grupo, ce_id_perfil) VALUES (grupo_id, perfil_id);
-    i := i + 1;
-  END LOOP;
-END $$;
+-- Popular tabela ACERVO
+INSERT INTO ACERVO (tipo, ce_id_perfil, ce_id_jogo, ce_id_conquista) VALUES
+-- 50 do tipo desejo 
+(),
+-- 50 do tipo comprado
+(),
