@@ -1,26 +1,33 @@
 -- =========== Querrys basicas ==========
 -- 1. 
--- Qual é o nome e e-mail de todos os perfis cadastrados?
-SELECT nome, email 
-FROM PERFIL;
+-- Quais os nomes dos perfis e os nomes dos jogos que eles têm em seu acervo, listando também o tipo do acervo?
+SELECT p.nome AS nome_perfil, j.nome AS nome_jogo, a.tipo AS tipo_acervo
+FROM PERFIL p
+JOIN ACERVO a ON p.cp_id_perfil = a.ce_id_perfil
+JOIN JOGOS j ON a.ce_id_jogo = j.cp_id_jogo;
 
 -- 2. 
--- Quais são os jogos disponíveis e seus respectivos preços?
-SELECT nome, preco 
-FROM JOGOS;
-
+-- Qual o preço médio dos jogos em cada categoria?
+SELECT c.nome AS nome_categoria, AVG(j.preco) AS preco_medio
+FROM JOGOS j
+JOIN CATEGORIA c ON j.ce_id_categoria = c.cp_id_categoria
+GROUP BY c.nome;
 
 -- 3.
--- Quais são as conquistas cadastradas no sistema?
-SELECT nome 
-FROM CONQUISTA;
+--  Quais os nomes dos jogos e os nomes das categorias a que pertencem, listando apenas os jogos que custam mais de 50 reais?
+SELECT j.nome AS nome_jogo, c.nome AS nome_categoria
+FROM JOGOS j
+JOIN CATEGORIA c ON j.ce_id_categoria = c.cp_id_categoria
+WHERE j.preco > 50;
 
 -- =========== Querrys intermediarias ==========
 -- 4. 
--- Qual é o nome dos jogos e a categoria a qual eles pertencem?
-SELECT j.nome AS nome_jogo, c.nome AS categoria_jogo
-FROM JOGOS j
-JOIN CATEGORIA c ON j.ce_id_categoria = c.cp_id_categoria;
+-- Quantos amigos cada perfil tem?
+SELECT p.nome AS nome_perfil, COUNT(a.cp_id_amigo) AS numero_de_amigos
+FROM PERFIL p
+LEFT JOIN AMIGOS a ON p.cp_id_perfil = a.ce_id_perfil
+GROUP BY p.nome
+ORDER BY numero_de_amigos DESC; -- Ordena para mostrar quem tem mais amigos primeiro
 
 -- 5. 
 -- Qual é o nome dos jogos e a categoria a qual eles pertencem?
@@ -37,11 +44,14 @@ GROUP BY p.nome;
 
 -- 7.
 -- Quais perfis têm amigos em comum? (Exemplo: perfis com o mesmo amigo)
-SELECT p1.nome AS perfil1, p2.nome AS perfil2, a.ce_nome_perfil AS amigo_comum
-FROM AMIGOS a
-JOIN PERFIL p1 ON p1.cp_id_perfil = a.ce_id_perfil
-JOIN PERFIL p2 ON p2.nome = a.ce_nome_perfil
-WHERE p1.cp_id_perfil != p2.cp_id_perfil;
+SELECT p1.nome AS perfil1, p2.nome AS perfil2, p3.nome AS amigo_comum
+FROM PERFIL p1
+JOIN amigos_perfil ap1 ON p1.cp_id_perfil = ap1.ce_id_perfil
+JOIN AMIGOS a ON ap1.ce_id_amigo = a.cp_id_amigo
+JOIN PERFIL p3 ON a.ce_id_perfil = p3.cp_id_perfil -- Amigo comum
+JOIN amigos_perfil ap2 ON p2.cp_id_perfil = ap2.ce_id_perfil
+WHERE ap1.ce_id_amigo = ap2.ce_id_amigo -- Condição chave: mesmo amigo
+AND p1.cp_id_perfil < p2.cp_id_perfil; -- Evita duplicatas (ex: (A, B) e (B, A))
 
 -- =========== Querrys avançadas ==========
 -- 8.
