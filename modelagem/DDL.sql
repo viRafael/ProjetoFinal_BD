@@ -1,6 +1,6 @@
 CREATE TABLE PERFIL ( 
     cp_id_perfil SERIAL PRIMARY KEY,  
-    nome varchar(20),  
+    nome varchar(30) UNIQUE,  
     apelido varchar(20) NOT NULL,  
     email varchar(40) NOT NULL UNIQUE,  
     numero_telefone INT,  
@@ -43,7 +43,7 @@ CREATE TABLE AMIGOS (
 
 CREATE TABLE GRUPO ( 
     cp_id_grupo SERIAL PRIMARY KEY,  
-    nome varchar(20) NOT NULL,  
+    nome varchar(40) NOT NULL,  
     descrição varchar(120),
     numero_participantes INT
 );  
@@ -92,7 +92,6 @@ REFERENCES PERFIL (nome);
 ALTER TABLE AMIGOS
 ADD FOREIGN KEY(ce_id_perfil) 
 REFERENCES PERFIL (cp_id_perfil);
-
 
 -- Adicionando para amigos_perfil
 ALTER TABLE amigos_perfil

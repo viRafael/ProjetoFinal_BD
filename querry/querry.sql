@@ -1,93 +1,76 @@
 -- =========== Querrys basicas ==========
 -- 1. 
--- Listar os jogos da biblioteca com tempo de uso acima de um valor específico
-SELECT nome
-FROM BIBLIOTECA
-WHERE tempo_uso > 100; -- Substitua 100 pelo tempo desejado
+-- Qual é o nome e e-mail de todos os perfis cadastrados?
+SELECT nome, email 
+FROM PERFIL;
 
 -- 2. 
--- Listar todos os jogos na biblioteca de um determinado usuário (com ID específico)
-SELECT b.nome
-FROM BIBLIOTECA b
-WHERE b.ce_id_perfil = 42; -- Substitua 42 pelo ID do usuário
+-- Quais são os jogos disponíveis e seus respectivos preços?
+SELECT nome, preco 
+FROM JOGOS;
+
 
 -- 3.
--- Quais os usuários que tem o id 1, 3 ou 5?
-SELECT nome
-FROM PERFIL
-WHERE cp_id_perfil IN (1, 3, 5);
-
--- 4. 
--- Queremos saber os nomes dos jogos cujo preço é maior do que 100, especificamente do jogardor com id 80 
+-- Quais são as conquistas cadastradas no sistema?
 SELECT nome 
-FROM DESEJO 
-WHERE preço > 100 AND ce_id_perfil = 80;
+FROM CONQUISTA;
 
 -- =========== Querrys intermediarias ==========
+-- 4. 
+-- Qual é o nome dos jogos e a categoria a qual eles pertencem?
+SELECT j.nome AS nome_jogo, c.nome AS categoria_jogo
+FROM JOGOS j
+JOIN CATEGORIA c ON j.ce_id_categoria = c.cp_id_categoria;
+
 -- 5. 
--- Quais os nomes dos usuários que têm amigos com tempo de jogo maior que 100 horas? 
-SELECT nome
-FROM PERFIL
-WHERE cp_id_perfil IN (SELECT ce_id_perfil FROM AMIGOS WHERE tempo_jogado_juntos > 100);
+-- Qual é o nome dos jogos e a categoria a qual eles pertencem?
+SELECT j.nome AS nome_jogo, c.nome AS categoria_jogo
+FROM JOGOS j
+JOIN CATEGORIA c ON j.ce_id_categoria = c.cp_id_categoria;
 
 -- 6.
--- Qual o nome dos usuários e a quantidade de amigos que cada um possui?
-SELECT p.nome, COUNT(a.cp_id_amigo) AS quantidade_amigos
+-- Quantas conquistas estão associadas a cada perfil?
+SELECT p.nome, COUNT(a.ce_id_conquista) AS total_conquistas
 FROM PERFIL p
-LEFT JOIN AMIGOS a ON p.cp_id_perfil = a.ce_id_perfil
+JOIN ACERVO a ON p.cp_id_perfil = a.ce_id_perfil
 GROUP BY p.nome;
 
 -- 7.
--- Encontrar Usuários com Desejos em uma Categoria Específica
-SELECT p.nome AS nome_usuario, c.descrição AS descrição_categoria
-FROM PERFIL p
-JOIN DESEJO d ON p.cp_id_perfil = d.ce_id_perfil
-JOIN CATEGORIA c ON d.ce_id_categoria = c.cp_id_categoria
-WHERE c.nome = 'Categoria 20'
-GROUP BY p.nome, c.descrição;
+-- Quais perfis têm amigos em comum? (Exemplo: perfis com o mesmo amigo)
+SELECT p1.nome AS perfil1, p2.nome AS perfil2, a.ce_nome_perfil AS amigo_comum
+FROM AMIGOS a
+JOIN PERFIL p1 ON p1.cp_id_perfil = a.ce_id_perfil
+JOIN PERFIL p2 ON p2.nome = a.ce_nome_perfil
+WHERE p1.cp_id_perfil != p2.cp_id_perfil;
 
 -- =========== Querrys avançadas ==========
-
 -- 8.
--- Encontrando amigos em comum que compartilham desejos.
-SELECT p1.nome AS usuario1, p2.nome AS usuario2, d.nome AS jogo_em_comum
-FROM PERFIL p1
-JOIN AMIGOS a1 ON p1.cp_id_perfil = a1.ce_id_perfil
-JOIN PERFIL p2 ON a1.cp_id_amigo = p2.cp_id_perfil
-JOIN DESEJO d ON d.ce_id_perfil = p1.cp_id_perfil -- Desejo de p1
-WHERE EXISTS ( -- Verifica se p2 também deseja o mesmo jogo
-    SELECT 1
-    FROM DESEJO d2
-    WHERE d2.ce_id_perfil = p2.cp_id_perfil AND d2.nome = d.nome
-) AND p1.cp_id_perfil < p2.cp_id_perfil; -- Evita duplicatas
+-- Quais perfis possuem jogos de determinadas categorias e também conquistaram conquistas?
+SELECT p.nome, j.nome AS jogo, c.nome AS categoria, co.nome AS conquista
+FROM PERFIL p
+JOIN ACERVO a ON p.cp_id_perfil = a.ce_id_perfil
+JOIN JOGOS j ON a.ce_id_jogo = j.cp_id_jogo
+JOIN CATEGORIA c ON j.ce_id_categoria = c.cp_id_categoria
+JOIN CONQUISTA co ON a.ce_id_conquista = co.cp_id_conquista
+WHERE c.nome = 'Ação'; -- Categoria de exemplo
 
 -- 9.
--- Encontrar grupos com mais de um membro que compartilham pelo menos uma categoria de desejo.
-SELECT g.nome AS nome_grupo, c.nome AS nome_categoria
-FROM GRUPO g
-JOIN participar p1 ON g.cp_id_grupo = p1.ce_id_grupo
-JOIN participar p2 ON g.cp_id_grupo = p2.ce_id_grupo AND p1.ce_id_perfil < p2.ce_id_perfil -- Garante que sejam membros diferentes
-JOIN DESEJO d1 ON p1.ce_id_perfil = d1.ce_id_perfil
-JOIN DESEJO d2 ON p2.ce_id_perfil = d2.ce_id_perfil
-JOIN CATEGORIA c ON d1.ce_id_categoria = c.cp_id_categoria AND d2.ce_id_categoria = c.cp_id_categoria
-GROUP BY g.nome, c.nome
-HAVING COUNT(DISTINCT p1.ce_id_perfil) > 1; -- Garante que o grupo tenha mais de um membro que compartilha a categoria
+-- Quais perfis jogaram juntos mais tempo? (Baseado no tempo total jogado)
+SELECT p1.nome AS perfil1, p2.nome AS perfil2, SUM(ap.tempo_jogado_juntos) AS tempo_total
+FROM amigos_perfil ap
+JOIN PERFIL p1 ON ap.ce_id_perfil = p1.cp_id_perfil
+JOIN PERFIL p2 ON ap.ce_id_amigo = p2.cp_id_perfil
+GROUP BY p1.nome, p2.nome
+ORDER BY tempo_total DESC
+LIMIT 5; -- Top 5 perfis com mais tempo jogado juntos
 
 -- 10.
--- Tempo total jogado com amigos que compartilham pelo menos um desejo. 
-SELECT p1.nome, SUM(a1.tempo_jogado_juntos) AS tempo_total_com_amigos_em_comum
-FROM PERFIL p1
-JOIN AMIGOS a1 ON p1.cp_id_perfil = a1.ce_id_perfil
-WHERE EXISTS (
-    SELECT 1
-    FROM PERFIL p2
-    JOIN AMIGOS a2 ON p2.cp_id_perfil = a2.ce_id_perfil
-    JOIN DESEJO d ON d.ce_id_perfil = p1.cp_id_perfil -- Desejo de p1
-    WHERE a2.cp_id_amigo = p1.cp_id_perfil
-      AND EXISTS (
-        SELECT 1
-        FROM DESEJO d2
-        WHERE d2.ce_id_perfil = p2.cp_id_perfil AND d2.nome = d.nome
-      )
-)
-GROUP BY p1.nome;
+-- Quais perfis pertencem aos mesmos grupos e têm o mesmo amigo?
+SELECT p1.nome AS perfil1, p2.nome AS perfil2, g.nome AS grupo, a.ce_nome_perfil AS amigo_comum
+FROM grupo_perfil gp
+JOIN PERFIL p1 ON gp.ce_id_perfil = p1.cp_id_perfil
+JOIN grupo_perfil gp2 ON gp.ce_id_grupo = gp2.ce_id_grupo
+JOIN PERFIL p2 ON gp2.ce_id_perfil = p2.cp_id_perfil
+JOIN AMIGOS a ON p1.cp_id_perfil = a.ce_id_perfil
+WHERE p1.cp_id_perfil != p2.cp_id_perfil
+AND a.ce_id_perfil = p2.cp_id_perfil;

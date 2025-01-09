@@ -29,7 +29,7 @@ INSERT INTO CATEGORIA (nome, descrição) VALUES
 ('Tabuleiro', 'Adaptações digitais de jogos de tabuleiro.'),
 ('Cartas', 'Adaptações digitais de jogos de cartas.'),
 ('Party Games', 'Jogos para jogar com amigos em festas.'),
-('Infantil', 'Jogos voltados para o público infantil.'),
+('Infantil', 'Jogos voltados para o público infantil.');
 
 -- Popular tabela CONQUISTA
 INSERT INTO CONQUISTA (nome, descrição) VALUES
@@ -65,170 +65,128 @@ INSERT INTO CONQUISTA (nome, descrição) VALUES
 ('Desvendador de Mistérios', 'Descubra todos os segredos escondidos nos puzzles.');
 
 -- Popular tabela PERFIL
-INSERT INTO PERFIL (nome, apelido, email, numero_telefone) VALUES 
- ('Marcelo Martins', 'MarMar2', 'marcelo.martins2@hotmail.com', 8725214),     
- ('Adriana Gonçalves', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001),
- ('Ricardo Moreira', 'RicMor4', 'ricardo.moreira4@outlook.com', 2718738),     
- ('Marcelo Gonçalves', 'MarGon5', 'marcelo.gonçalves5@yahoo.com.br', 02007166),
- ('Marcelo Monteiro', 'MarMon6', 'marcelo.monteiro6@gmail.com', 554834),     
- ('Thiago Moreira', 'ThiMor7', 'thiago.moreira7@yahoo.com.br', 20823352),      
- ('Fernanda Dias', 'FerDia8', 'fernanda.dias8@hotmail.com', 3374020),
- ('Natália Nunes', 'NatNun', 'natália.nunes@yahoo.com.br', 26744143),        
- ('José Melo', 'JosMel10', 'josé.melo10@bol.com.br', 718448),
- ('Ricardo Moreira', 'RicMor', 'ricardo.moreira@yahoo.com.br', 22458007),
- ('Cristiane Carvalho', 'CriCar12', 'cristiane.carvalho12@hotmail.com', 37827218),      
- ('Raquel Pereira', 'RaqPer13', 'raquel.pereira13@yahoo.com.br', 826367),
- ('Sandra Cardoso', 'SanCar14', 'sandra.cardoso14@hotmail.com', 15066),
- ('Márcio Henriques', 'MárHen15', 'márcio.henriques15@gmail.com', 541676),
- ('Pedro Teixeira', 'PedTei16', 'pedro.teixeira16@bol.com.br', 6856837),
- ('Raquel Moreira', 'RaqMor17', 'raquel.moreira17@bol.com.br', 61712622),
- ('Raquel Santos', 'RaqSan18', 'raquel.santos18@outlook.com', 3642557),
- ('Fábio Cruz', 'FábCru1', 'fábio.cruz1@yahoo.com.br', 58160585),
- ('Cláudia Santos', 'CláSan20', 'cláudia.santos20@hotmail.com', 2021723),
- ('Anderson Martins', 'AndMar21', 'anderson.martins21@yahoo.com.br', 84327327),
- ('Renata Alves', 'RenAlv22', 'renata.alves22@gmail.com', 14325430),
- ('Camila Nunes', 'CamNun23', 'camila.nunes23@hotmail.com', 6274456),
- ('Julia Santos', 'JulSan24', 'julia.santos24@yahoo.com.br', 0027867),
- ('Larissa Tavares', 'LarTav25', 'larissa.tavares25@gmail.com', 033881),
- ('Márcio Araújo', 'MárAra26', 'márcio.araújo26@outlook.com', 13222),
- ('Beatriz Azevedo', 'BeaAze27', 'beatriz.azevedo27@yahoo.com.br', 84718361),
- ('Débora Marques', 'DébMar28', 'débora.marques28@outlook.com', 88472274),
- ('Marcelo Marques', 'MarMar2', 'marcelo.marques2@outlook.com', 750764),
- ('Amanda Rodrigues', 'AmaRod30', 'amanda.rodrigues30@yahoo.com.br', 37612686),
- ('Fernanda Pinheiro', 'FerPin31', 'fernanda.pinheiro31@hotmail.com', 20838362),        
- ('Vinícius Freitas', 'VinFre32', 'vinícius.freitas32@yahoo.com.br', 17714055),
- ('Márcio Nunes', 'MárNun33', 'márcio.nunes33@outlook.com', 4774366),
- ('Gabriel Alves', 'GabAlv34', 'gabriel.alves34@bol.com.br', 1753031),
- ('Eduardo Vieira', 'EduVie35', 'eduardo.vieira35@outlook.com', 74434531),
- ('Carlos Silva', 'CarSil36', 'carlos.silva36@gmail.com', 20062673),
- ('Paulo Barbosa', 'PauBar37', 'paulo.barbosa37@bol.com.br', 71038786),
- ('Débora Araújo', 'DébAra38', 'débora.araújo38@hotmail.com', 7823718),
- ('João Marques', 'JoãMar3', 'joão.marques3@yahoo.com.br', 38025413),
- ('Anderson Pinheiro', 'AndPin40', 'anderson.pinheiro40@hotmail.com', 13101660),        
- ('Guilherme Henriques', 'GuiHen41', 'guilherme.henriques41@bol.com.br', 35347824),     
- ('Ana Coelho', 'AnaCoe42', 'ana.coelho42@outlook.com', 83886002),
- ('Rodrigo Moreira', 'RodMor43', 'rodrigo.moreira43@outlook.com', 187653),
- ('Bruna Dias', 'BruDia44', 'bruna.dias44@yahoo.com.br', 8074080),
- ('Natália Santos', 'NatSan45', 'natália.santos45@hotmail.com', 42155),
- ('Adriana Gonçalves', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001),
- ('Ricardo Moreira', 'RicMor4', 'ricardo.moreira4@outlook.com', 2718738),     
- ('Marcelo Gonçalves', 'MarGon5', 'marcelo.gonçalves5@yahoo.com.br', 02007166),
- ('Marcelo Monteiro', 'MarMon6', 'marcelo.monteiro6@gmail.com', 554834),     
- ('Thiago Moreira', 'ThiMor7', 'thiago.moreira7@yahoo.com.br', 20823352),      
- ('Fernanda Dias', 'FerDia8', 'fernanda.dias8@hotmail.com', 3374020),
- ('Natália Nunes', 'NatNun', 'natália.nunes@yahoo.com.br', 26744143),        
- ('José Melo', 'JosMel10', 'josé.melo10@bol.com.br', 718448),
- ('Ricardo Moreira', 'RicMor', 'ricardo.moreira@yahoo.com.br', 22458007),
- ('Cristiane Carvalho', 'CriCar12', 'cristiane.carvalho12@hotmail.com', 37827218),      
- ('Raquel Pereira', 'RaqPer13', 'raquel.pereira13@yahoo.com.br', 826367),
- ('Sandra Cardoso', 'SanCar14', 'sandra.cardoso14@hotmail.com', 15066),
- ('Márcio Henriques', 'MárHen15', 'márcio.henriques15@gmail.com', 541676),
- ('Pedro Teixeira', 'PedTei16', 'pedro.teixeira16@bol.com.br', 6856837),
- ('Raquel Moreira', 'RaqMor17', 'raquel.moreira17@bol.com.br', 61712622),
- ('Raquel Santos', 'RaqSan18', 'raquel.santos18@outlook.com', 3642557),
- ('Fábio Cruz', 'FábCru1', 'fábio.cruz1@yahoo.com.br', 58160585),
- ('Cláudia Santos', 'CláSan20', 'cláudia.santos20@hotmail.com', 2021723),
- ('Anderson Martins', 'AndMar21', 'anderson.martins21@yahoo.com.br', 84327327),
- ('Renata Alves', 'RenAlv22', 'renata.alves22@gmail.com', 14325430),
- ('Camila Nunes', 'CamNun23', 'camila.nunes23@hotmail.com', 6274456),
- ('Julia Santos', 'JulSan24', 'julia.santos24@yahoo.com.br', 0027867),
- ('Larissa Tavares', 'LarTav25', 'larissa.tavares25@gmail.com', 033881),
- ('Márcio Araújo', 'MárAra26', 'márcio.araújo26@outlook.com', 13222),
- ('Beatriz Azevedo', 'BeaAze27', 'beatriz.azevedo27@yahoo.com.br', 84718361),
- ('Débora Marques', 'DébMar28', 'débora.marques28@outlook.com', 88472274),
- ('Marcelo Marques', 'MarMar2', 'marcelo.marques2@outlook.com', 750764),
- ('Amanda Rodrigues', 'AmaRod30', 'amanda.rodrigues30@yahoo.com.br', 37612686),
- ('Fernanda Pinheiro', 'FerPin31', 'fernanda.pinheiro31@hotmail.com', 20838362),        
- ('Vinícius Freitas', 'VinFre32', 'vinícius.freitas32@yahoo.com.br', 17714055),
- ('Márcio Nunes', 'MárNun33', 'márcio.nunes33@outlook.com', 4774366),
- ('Gabriel Alves', 'GabAlv34', 'gabriel.alves34@bol.com.br', 1753031),
- ('Eduardo Vieira', 'EduVie35', 'eduardo.vieira35@outlook.com', 74434531),
- ('Carlos Silva', 'CarSil36', 'carlos.silva36@gmail.com', 20062673),
- ('Pedro Rodrigues', 'PedRod4', 'pedro.rodrigues4@bol.com.br', 5827520),
- ('Fábio Monteiro', 'FábMon50', 'fábio.monteiro50@bol.com.br', 28356224),
- ('Guilherme Pinheiro', 'GuiPin51', 'guilherme.pinheiro51@hotmail.com', 84824581),      
- ('Lucas Lopes', 'LucLop52', 'lucas.lopes52@bol.com.br', 86884842),
- ('Juliana Moraes', 'JulMor53', 'juliana.moraes53@bol.com.br', 45471607),
- ('Alexandre Andrade', 'AleAnd54', 'alexandre.andrade54@yahoo.com.br', 78527184),       
- ('Thiago Silva', 'ThiSil55', 'thiago.silva55@bol.com.br', 4286273),
- ('Marcelo Martins', 'MarMar2', 'marcelo.martins2@hotmail.com', 8725214),     
- ('Adriana Gonçalves', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001),
- ('Ricardo Moreira', 'RicMor4', 'ricardo.moreira4@outlook.com', 2718738),     
- ('Marcelo Gonçalves', 'MarGon5', 'marcelo.gonçalves5@yahoo.com.br', 02007166),
- ('Marcelo Monteiro', 'MarMon6', 'marcelo.monteiro6@gmail.com', 554834),     
- ('Thiago Moreira', 'ThiMor7', 'thiago.moreira7@yahoo.com.br', 20823352),      
- ('Fernanda Dias', 'FerDia8', 'fernanda.dias8@hotmail.com', 3374020),
- ('Natália Nunes', 'NatNun', 'natália.nunes@yahoo.com.br', 26744143),        
- ('José Melo', 'JosMel10', 'josé.melo10@bol.com.br', 718448),
- ('Ricardo Moreira', 'RicMor', 'ricardo.moreira@yahoo.com.br', 22458007),
- ('Cristiane Carvalho', 'CriCar12', 'cristiane.carvalho12@hotmail.com', 37827218),      
- ('Raquel Pereira', 'RaqPer13', 'raquel.pereira13@yahoo.com.br', 826367),
- ('Sandra Cardoso', 'SanCar14', 'sandra.cardoso14@hotmail.com', 15066),
- ('Márcio Henriques', 'MárHen15', 'márcio.henriques15@gmail.com', 541676),
- ('Pedro Teixeira', 'PedTei16', 'pedro.teixeira16@bol.com.br', 6856837),
- ('Raquel Moreira', 'RaqMor17', 'raquel.moreira17@bol.com.br', 61712622),
- ('Raquel Santos', 'RaqSan18', 'raquel.santos18@outlook.com', 3642557),
- ('Fábio Cruz', 'FábCru1', 'fábio.cruz1@yahoo.com.br', 58160585),
- ('Cláudia Santos', 'CláSan20', 'cláudia.santos20@hotmail.com', 2021723),
- ('Anderson Martins', 'AndMar21', 'anderson.martins21@yahoo.com.br', 84327327),
- ('Renata Alves', 'RenAlv22', 'renata.alves22@gmail.com', 14325430),
- ('Camila Nunes', 'CamNun23', 'camila.nunes23@hotmail.com', 6274456),
- ('Julia Santos', 'JulSan24', 'julia.santos24@yahoo.com.br', 0027867),
- ('Larissa Tavares', 'LarTav25', 'larissa.tavares25@gmail.com', 033881),
- ('Márcio Araújo', 'MárAra26', 'márcio.araújo26@outlook.com', 13222),
- ('Beatriz Azevedo', 'BeaAze27', 'beatriz.azevedo27@yahoo.com.br', 84718361),
- ('Débora Marques', 'DébMar28', 'débora.marques28@outlook.com', 88472274),
- ('Marcelo Marques', 'MarMar2', 'marcelo.marques2@outlook.com', 750764),
- ('Amanda Rodrigues', 'AmaRod30', 'amanda.rodrigues30@yahoo.com.br', 37612686),
- ('Fernanda Pinheiro', 'FerPin31', 'fernanda.pinheiro31@hotmail.com', 20838362),        
- ('Vinícius Freitas', 'VinFre32', 'vinícius.freitas32@yahoo.com.br', 17714055),
- ('Márcio Nunes', 'MárNun33', 'márcio.nunes33@outlook.com', 4774366),
- ('Gabriel Alves', 'GabAlv34', 'gabriel.alves34@bol.com.br', 1753031),
- ('Eduardo Vieira', 'EduVie35', 'eduardo.vieira35@outlook.com', 74434531),
- ('Carlos Silva', 'CarSil36', 'carlos.silva36@gmail.com', 20062673),
- ('Fernanda Vicente', 'FerVic61', 'fernanda.vicente61@gmail.com', 50017231),
- ('Letícia Pires', 'LetPir62', 'letícia.pires62@bol.com.br', 84270376),
- ('Fábio Machado', 'FábMac63', 'fábio.machado63@hotmail.com', 61246367),
- ('Carlos Monteiro', 'CarMon64', 'carlos.monteiro64@outlook.com', 36241604),
- ('Larissa Azevedo', 'LarAze65', 'larissa.azevedo65@bol.com.br', 03165),
- ('Cristiane Sousa', 'CriSou66', 'cristiane.sousa66@outlook.com', 7727726),
- ('Vanessa Gomes', 'VanGom67', 'vanessa.gomes67@bol.com.br', 33620025),
- ('Marcelo Vicente', 'MarVic68', 'marcelo.vicente68@yahoo.com.br', 0068768),
- ('Fábio Moraes', 'FábMor6', 'fábio.moraes6@outlook.com', 6877074),
- ('Simone Souza', 'SimSou70', 'simone.souza70@hotmail.com', 11085633),
- ('Daniel Fernandes', 'DanFer71', 'daniel.fernandes71@gmail.com', 088468),
- ('Bruno Teixeira', 'BruTei72', 'bruno.teixeira72@hotmail.com', 42173561),
- ('Paulo Ribeiro', 'PauRib73', 'paulo.ribeiro73@outlook.com', 7744225),
- ('Ricardo Rodrigues', 'RicRod74', 'ricardo.rodrigues74@outlook.com', 766573),        
- ('Simone Dias', 'SimDia75', 'simone.dias75@hotmail.com', 4414364),
- ('Alexandre Machado', 'AleMac76', 'alexandre.machado76@outlook.com', 30848671),        
- ('Bruna Rodrigues', 'BruRod77', 'bruna.rodrigues77@hotmail.com', 53455328),
- ('Alexandre Carvalho', 'AleCar78', 'alexandre.carvalho78@hotmail.com', 62725821),      
- ('José Marques', 'JosMar7', 'josé.marques7@bol.com.br', 357503),
- ('Guilherme Santos', 'GuiSan80', 'guilherme.santos80@yahoo.com.br', 2467440),
- ('Fernanda Silva', 'FerSil81', 'fernanda.silva81@hotmail.com', 2615738),
- ('Juliana Vicente', 'JulVic82', 'juliana.vicente82@outlook.com', 81787431),
- ('Amanda Andrade', 'AmaAnd83', 'amanda.andrade83@yahoo.com.br', 0008488),
- ('Natália Correia', 'NatCor84', 'natália.correia84@bol.com.br', 577206),
- ('Cláudia Pinheiro', 'CláPin85', 'cláudia.pinheiro85@hotmail.com', 5475730),
- ('José Araújo', 'JosAra86', 'josé.araújo86@hotmail.com', 7354013),
- ('Patrícia Marques', 'PatMar87', 'patrícia.marques87@bol.com.br', 5236572),
- ('Letícia Costa', 'LetCos88', 'letícia.costa88@bol.com.br', 71041667),
- ('Bruna Teixeira', 'BruTei8', 'bruna.teixeira8@gmail.com', 1762807),
- ('Felipe Cardoso', 'FelCar0', 'felipe.cardoso0@hotmail.com', 8041850),
- ('Sandra Lima', 'SanLim1', 'sandra.lima1@gmail.com', 861852),
- ('Juliana Melo', 'JulMel2', 'juliana.melo2@yahoo.com.br', 741653),
- ('Amanda Campos', 'AmaCam3', 'amanda.campos3@outlook.com', 62553072),
- ('Rodrigo Antunes', 'RodAnt4', 'rodrigo.antunes4@gmail.com', 8778552),
- ('Marcelo Dias', 'MarDia5', 'marcelo.dias5@bol.com.br', 5457262),
- ('Lucas Santos', 'LucSan6', 'lucas.santos6@gmail.com', 5761666),
- ('Anderson Nascimento', 'AndNas7', 'anderson.nascimento7@yahoo.com.br', 3440516),   
- ('Sérgio Gonçalves', 'SérGon8', 'sérgio.gonçalves8@yahoo.com.br', 06017070),
- ('Ricardo Pereira', 'RicPer', 'ricardo.pereira@hotmail.com', 1413782),
- ('Rafael Melo', 'RafMel100', 'rafael.melo100@hotmail.com', 771570);
+INSERT INTO PERFIL (nome, apelido, email, numero_telefone) VALUES
+('Marcelo Martins', 'MarMar2', 'marcelo.martins2@hotmail.com', 8725214),
+('Adriana Gonçalves', 'AdrGon3', 'adriana.gonçalves34@yahoo.com.br', 03736001),
+('Ricardo Moreira 1', 'RicMor4', 'ricardo.moreira2d4@outlook.com', 2718738),
+('Marcelo Gonçalves 2', 'MarGon5', 'marcelo.gonçalves15@yahoo.com.br', 02007166),
+('Marcelo Monteiro 3', 'MarMon6', 'marcelo.monteiro6@gmail.com', 554834),
+('Thiago Moreira 4', 'ThiMor7', 'thiago.moreira7@yahoo.com.br', 20823352),
+('Fernanda Dias 5', 'FerDia8', 'fernanda.dias38@hotmail.com', 3374020),
+('Natália Nunes 6', 'NatNun', 'natália.nunes@yahoo.com.br', 26744143),
+('José Melo 7', 'JosMel10', 'josé.melo104@bol.com.br', 718448),
+('Roberto Judas', 'RicMor', 'ricardo.moreira99@yahoo.com.br', 22458007), -- Modificado
+('Cristiane Orvalho', 'CriCar12', 'cristiane2.carvalho12@hotmail.com', 37827218),
+('Raquel Pereira', 'RaqPer13', 'raquel.pereira13@yahoo.com.br', 826367),
+('Sandra Cardoso', 'SanCar14', 'sandra.cardoso14@hotmail.com', 15066),
+('Márcio Henriques', 'MárHen15', 'márcio.henriques15@gmail.com', 541676),
+('Pedro Teixeira', 'PedTei16', 'pedro.teixeira16@bol.com.br', 6856837),
+('Raquel Moreira', 'RaqMor17', 'raquel.moreira17@bol.com.br', 61712622),
+('Raquel Santoss', 'RaqSan18', 'raquel.santos118@outlook.com', 3642557),
+('Fábio Cruz', 'FábCru1', 'fábio.cruz1@yahoo.com.br', 58160585),
+('Cláudia Santos', 'CláSan20', 'cláudia.santos20@hotmail.com', 2021723),
+('Anderson Roberto', 'AndMar21', 'andersons.martins241@yahoo.com.br', 84327327),
+('Renata Alves 19', 'RenAlv22', 'renata.alvess22@gmail.com', 14325430),
+('Camila Nunez', 'CamNun23', 'camila.nunez23@hotmail.com', 6274456),
+('Julia Santoz', 'JulSan24', 'julia.santoz24@yahoo.com.br', 0027867),
+('Larissa Tavarez', 'LarTav25', 'larissa.tavarez55@gmail.com', 033881),
+('Márcio Araújos 08', 'MárAra26', 'márcio.araújoz06@outlook.com', 13222),
+('Beatriz Azevedoz', 'BeaAze27', 'beatris.azevedo27@yahoo.com.br', 84718361),
+('Débora Marques 35', 'DébMar28', 'déboras.marquez28@outlook.com', 88472274),
+('Marcelo Marques 10', 'MarMar2', 'marcelo.marques2@outlook.com', 750764),
+('Amanda Rodriguez 47', 'AmaRod30', 'amanda.rodriguez30@yahoo.com.br', 37612686),
+('Fernanda Pinheiro 28', 'FerPin31', 'fernanda.pinheiro31@hotmail.com', 20838362),
+('Vinícius Freitaz 29', 'VinFre32', 'vinícius.freitaz32@yahoo.com.br', 17714055),
+('Márcio Nunez 03', 'MárNun33', 'márcio.nunez0.@outlook.com', 4774366),
+('Gabriel Alvez 1', 'GabAlv34', 'gabriel.alvezs34@bol.com.br', 1753031),
+('Eduardo Vieira 32', 'EduVie35', 'eduardo.vieira35@outlook.com', 74434531),
+('Carlos Silva 33', 'CarSil36', 'carlos.silva36@gmail.com', 20062673),
+('Paulo Barbosa', 'PauBar37', 'paulo.barbosa37@bol.com.br', 71038786),
+('Débora Araújo', 'DébAra38', 'débora.araújo38@hotmail.com', 7823718),
+('João Marques', 'JoãMar3', 'joão.marques3@yahoo.com.br', 38025413),
+('Anderson Pinheiro', 'AndPin40', 'anderson.pinheiro40@hotmail.com', 13101660),
+('Guilherme Henriques', 'GuiHen41', 'guilherme.henriques41@bol.com.br', 35347824),
+('Ana Coelho', 'AnaCoe42', 'ana.coelho42@outlook.com', 83886002),
+('Rodrigo Moreira', 'RodMor43', 'rodrigo.moreira43@outlook.com', 187653),
+('Bruna Dias', 'BruDia44', 'bruna.dias44@yahoo.com.br', 8074080),
+('Natália Santos 45', 'NatSan45', 'natália.santos45@hotmail.com', 42155),
+('Pedro Arrocha', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001), -- Modificado
+('Ricardo Moreira 12', 'RicMor4', 'ricardo.moreira4@outlook.com', 2718738),
+('Marcelo Gonçalves 13', 'MarGon5', 'marcelo.gonçalves5@yahoo.com.br', 02007166),
+('Marcelo Monteiro 14', 'MarMon6', 'marcelo.monteiro26@gmail.com', 554834),
+('Thiago Moreira 15', 'ThiMor7', 'thiago.moreira27@yahoo.com.br', 20823352),
+('Fernanda Dias 16', 'FerDia8', 'fernanda.dias8@hotmail.com', 3374020),
+('Natália Nunes 17', 'NatNun', 'natália.nunes23@yahoo.com.br', 26744143),
+('José Melo Junior 18', 'JosMel10', 'josé.melo10@bol.com.br', 718448),
+('Ricardo Augusto', 'RicMor', 'ricardo.moreira6@outlook.com', 22458007), -- Modificado
+('Cristiane Carvalho', 'CriCar12', 'cristiane.carvalho12@hotmail.com', 37827218),
+('Raquel Pereiras', 'RaqPer13', 'raquel.pereira143@yahoo.com.br', 826367),
+('Sandra Cardosos', 'SanCar14', 'sandra.cardoso134@hotmail.com', 15066),
+('Márcio Henrique', 'MárHen15', 'márcio.henriques135@gmail.com', 541676),
+('Pedro Teixeirass', 'PedTei16', 'pedro.teixeira016@bol.com.br', 6856837),
+('Raquel Moreirass', 'RaqMor17', 'raquel.moreira197@bol.com.br', 61712622),
+('Raquel Santos', 'RaqSan18', 'raquel.santos18@outlook.com', 3642557),
+('Fábio Cruzz', 'FábCru1', 'fábio.cruz19@yahoo.com.br', 58160585),
+('Cláudia Santoss', 'CláSan20', 'cláudia.santoss20@hotmail.com', 2021723),
+('Anderson Martins', 'AndMar21', 'anderson.martins21@yahoo.com.br', 84327327),
+('Renata Alvess', 'RenAlv22', 'renata.alves22@gmail.com', 14325430),
+('Camila Nunes 20', 'CamNun23', 'camila.nunes23@hotmail.com', 6274456),
+('Julia Santos 21', 'JulSan24', 'julia.santos24@yahoo.com.br', 0027867),
+('Larissa Tavares 22', 'LarTav25', 'larissa.tavares25@gmail.com', 033881),
+('Márcio Araújo 23', 'MárAra26', 'márcio.araújo26@outlook.com', 13222),
+('Beatriz Azevedo 24', 'BeaAze27', 'beatriz.azevedo27@yahoo.com.br', 84718361),
+('Débora Marques 25', 'DébMar28', 'débora.marques28@outlook.com', 88472274),
+('Marcelo Marques 26', 'MarMar2', 'marcelo.marquez2@outlook.com', 750764),
+('Amanda Rodrigues 27', 'AmaRod30', 'amanda.rodrigues30@yahoo.com.br', 37612686),
+('Fernanda Pinheiroz 28', 'FerPin31', 'fernanda.pinheiroz1@hotmail.com', 20838362),
+('Vinícius Freitas 29', 'VinFre32', 'vinícius.freitaz@yahoo.com.br', 17714055),
+('Márcio Nunes 30', 'MárNun33', 'márcio.nunes33@outlook.com', 4774366),
+('Gabriel Alves 31', 'GabAlv34', 'gabriel.alves34@bol.com.br', 1753031),
+('Eduardo Vieira 023', 'EduVie35', 'eduardo.viira35@outlook.com', 74434531),
+('Carloz Silva 33', 'CarSil36', 'carlos.zilva36@gmail.com', 20062673),
+('Fernanda Vicente', 'FerVic61', 'fernanda.vicente61@gmail.com', 50017231),
+('Letícia Pires', 'LetPir62', 'letícia.pires62@bol.com.br', 84270376),
+('Fábio Machado', 'FábMac63', 'fábio.machado63@hotmail.com', 61246367),
+('Carlos Monteiro', 'CarMon64', 'carlos.monteiro64@outlook.com', 36241604),
+('Larissa Azevedo', 'LarAze65', 'larissa.azevedo65@bol.com.br', 03165),
+('Cristiane Sousa', 'CriSou66', 'cristiane.sousa66@outlook.com', 7727726),
+('Vanessa Gomes', 'VanGom67', 'vanessa.gomes67@bol.com.br', 33620025),
+('Marcelo Vicente', 'MarVic68', 'marcelo.vicente68@yahoo.com.br', 0068768),
+('Fábio Moraes', 'FábMor6', 'fábio.moraes6@outlook.com', 6877074),
+('Simone Souza', 'SimSou70', 'simone.souza70@hotmail.com', 11085633),
+('Daniel Fernandes', 'DanFer71', 'daniel.fernandes71@gmail.com', 088468),
+('Bruno Teixeira', 'BruTei72', 'bruno.teixeira72@hotmail.com', 42173561),
+('Paulo Ribeiro', 'PauRib73', 'paulo.ribeiro73@outlook.com', 7744225),
+('Ricardo Rodrigues', 'RicRod74', 'ricardo.rodrigues74@outlook.com', 766573),
+('Simone Dias', 'SimDia75', 'simone.dias75@hotmail.com', 4414364),
+('Alexandre Machado', 'AleMac76', 'alexandre.machado76@outlook.com', 30848671),
+('Bruna Rodrigues', 'BruRod77', 'bruna.rodrigues77@hotmail.com', 53455328),
+('Alexandre Carvalho', 'AleCar78', 'alexandre.carvalho78@hotmail.com', 62725821),
+('José Marques 34', 'JosMar7', 'josé.marques7@bol.com.br', 357503),
+('Guilherme Santos', 'GuiSan80', 'guilherme.santos80@yahoo.com.br', 2467440),
+('Fernanda Silva', 'FerSil81', 'fernanda.silva81@hotmail.com', 2615738),
+('Juliana Vicente', 'JulVic82', 'juliana.vicente82@outlook.com', 81787431),
+('Amanda Andrade', 'AmaAnd83', 'amanda.andrade83@yahoo.com.br', 0008488),
+('Natália Correia', 'NatCor84', 'natália.correia84@bol.com.br', 577206),
+('Cláudia Pinheiro', 'CláPin85', 'cláudia.pinheiro85@hotmail.com', 5475730),
+('José Araújo', 'JosAra86', 'josé.araújo86@hotmail.com', 7354013),
+('Patrícia Marques', 'PatMar87', 'patrícia.marques87@bol.com.br', 5236572),
+('Letícia Costa', 'LetCos88', 'letícia.costa88@bol.com.br', 71041667),
+('Bruna Teixeira', 'BruTei8', 'bruna.teixeira8@gmail.com', 1762807),
+('Felipe Cardoso', 'FelCar0', 'felipe.cardoso0@hotmail.com', 8041850),
+('Sandra Lima', 'SanLim1', 'sandra.lima1@gmail.com', 861852),
+('Juliana Melo', 'JulMel2', 'juliana.melo2@yahoo.com.br', 741653),
+('Amanda Campos', 'AmaCam3', 'amanda.campos3@outlook.com', 62553072),
+('Rodrigo Antunes', 'RodAnt4', 'rodrigo.antunes4@gmail.com', 8778552),
+('Marcelo Dias', 'MarDia5', 'marcelo.dias5@bol.com.br', 5457262),
+('Lucas Santos', 'LucSan6', 'lucas.santos6@gmail.com', 5761666),
+('Anderson Nascimento', 'AndNas7', 'anderson.nascimento7@yahoo.com.br', 3440516),
+('Sérgio Gonçalves', 'SérGon8', 'sérgio.gonçalves8@yahoo.com.br', 06017070),
+('Ricardo Pereira', 'RicPer', 'ricardo.pereira@hotmail.com', 1413782),
+('Rafael Melo', 'RafMel100', 'rafael.melo100@hotmail.com', 771570);
 
--- Popular tabela JOGOS
-INSERT INTO JOGOS (nome, preco, data_lancamento, id_categoria) VALUES
+-- Populando tabela JOGOS
+INSERT INTO JOGOS (nome, preco, data_lancamento, ce_id_categoria) VALUES
 ('Guardiões da Galáxia: Batalha Final', 59.99, '2023-03-15', 15),
 ('Call of Honor: Linha de Frente', 79.90, '2022-11-20', 7),
 ('Need for Drift: Tokyo Nights', 49.95, '2024-06-10', 23),
@@ -251,7 +209,7 @@ INSERT INTO JOGOS (nome, preco, data_lancamento, id_categoria) VALUES
 ('Outlast 3: Profecia Sombria', 69.99, '2024-09-03', 14),
 ('The Long Dark: Inverno Eterno', 49.99, '2023-08-10', 1),
 ('Kingdom Come: Deliverance II', 84.99, '2022-01-15', 30),
-('Tom Clancy\'s Rainbow Six Siege 2', 69.90, '2024-10-20', 18),
+('Tom Clancys Rainbow Six Siege 2', 69.90, '2024-10-20', 18),
 ('BioShock 4: Ascensão das Cidades', 64.95, '2023-06-01', 16),
 ('Halo Infinite 2: Guerra pela Galáxia', 89.90, '2022-07-25', 13),
 ('Animal Crossing: Nova Vida Urbana', 54.99, '2024-02-12', 21),
@@ -280,7 +238,6 @@ INSERT INTO JOGOS (nome, preco, data_lancamento, id_categoria) VALUES
 ('Mass Effect 5', 89.99, '2024-10-29', 8),
 ('The Elder Scrolls VI: Redfall', 99.99, '2025-06-24', 30);
 
--- NÃO TESTADO 
 -- Popular tabela ACERVO
 INSERT INTO ACERVO (tipo, ce_id_perfil, ce_id_jogo, ce_id_conquista) VALUES
 ('Desejo', 1, 10, 5),
@@ -333,126 +290,126 @@ INSERT INTO ACERVO (tipo, ce_id_perfil, ce_id_jogo, ce_id_conquista) VALUES
 ('Desejo', 48, 15, 6),
 ('Desejo', 49, 43, 24),
 ('Desejo', 50, 31, 22),
-('Comprado', 1, 45, 22),
-('Comprado', 2, 19, 3),
-('Comprado', 3, 33, 10),
-('Comprado', 4, 48, 26),
-('Comprado', 5, 6, 1),
-('Comprado', 6, 12, 17),
-('Comprado', 7, 29, 19),
-('Comprado', 8, 21, 25),
-('Comprado', 9, 40, 8),
-('Comprado', 10, 4, 15),
-('Comprado', 11, 50, 20),
-('Comprado', 12, 37, 12),
-('Comprado', 13, 16, 7),
-('Comprado', 14, 2, 24),
-('Comprado', 15, 30, 5),
-('Comprado', 16, 8, 14),
-('Comprado', 17, 35, 30),
-('Comprado', 18, 1, 9),
-('Comprado', 19, 17, 13),
-('Comprado', 20, 38, 27),
-('Comprado', 21, 25, 4),
-('Comprado', 22, 11, 6),
-('Comprado', 23, 44, 18),
-('Comprado', 24, 10, 2),
-('Comprado', 25, 20, 11),
-('Comprado', 26, 32, 29),
-('Comprado', 27, 42, 15),
-('Comprado', 28, 49, 8),
-('Comprado', 29, 43, 26),
-('Comprado', 30, 39, 23),
-('Comprado', 31, 3, 10),
-('Comprado', 32, 28, 3),
-('Comprado', 33, 46, 14),
-('Comprado', 34, 26, 26),
-('Comprado', 35, 34, 30),
-('Comprado', 36, 41, 19),
-('Comprado', 37, 24, 2),
-('Comprado', 38, 15, 20),
-('Comprado', 39, 14, 17),
-('Comprado', 40, 5, 1),
-('Comprado', 41, 18, 16),
-('Comprado', 42, 9, 6),
-('Comprado', 43, 36, 9),
-('Comprado', 44, 22, 5),
-('Comprado', 45, 7, 24),
-('Comprado', 46, 27, 11),
-('Comprado', 47, 13, 15),
-('Comprado', 48, 23, 12),
-('Comprado', 49, 44, 4),
-('Comprado', 50, 30, 8);
+('Comprado', 51, 45, 22),
+('Comprado', 52, 19, 3),
+('Comprado', 53, 33, 10),
+('Comprado', 54, 48, 26),
+('Comprado', 55, 6, 1),
+('Comprado', 56, 12, 17),
+('Comprado', 57, 29, 19),
+('Comprado', 58, 21, 25),
+('Comprado', 59, 40, 8),
+('Comprado', 60, 4, 15),
+('Comprado', 61, 50, 20),
+('Comprado', 62, 37, 12),
+('Comprado', 63, 16, 7),
+('Comprado', 64, 2, 24),
+('Comprado', 65, 30, 5),
+('Comprado', 66, 8, 14),
+('Comprado', 67, 35, 30),
+('Comprado', 68, 1, 9),
+('Comprado', 69, 17, 13),
+('Comprado', 70, 38, 27),
+('Comprado', 71, 25, 4),
+('Comprado', 72, 11, 6),
+('Comprado', 73, 44, 18),
+('Comprado', 74, 10, 2),
+('Comprado', 75, 20, 11),
+('Comprado', 76, 32, 29),
+('Comprado', 77, 42, 15),
+('Comprado', 78, 49, 8),
+('Comprado', 79, 43, 26),
+('Comprado', 80, 39, 23),
+('Comprado', 81, 3, 10),
+('Comprado', 82, 28, 3),
+('Comprado', 83, 46, 14),
+('Comprado', 84, 26, 26),
+('Comprado', 85, 34, 30),
+('Comprado', 86, 41, 19),
+('Comprado', 87, 24, 2),
+('Comprado', 88, 15, 20),
+('Comprado', 89, 14, 17),
+('Comprado', 90, 5, 1),
+('Comprado', 91, 18, 16),
+('Comprado', 92, 9, 6),
+('Comprado', 93, 36, 9),
+('Comprado', 94, 22, 5),
+('Comprado', 95, 7, 24),
+('Comprado', 96, 27, 11),
+('Comprado', 97, 13, 15),
+('Comprado', 98, 23, 12),
+('Comprado', 99, 44, 4),
+('Comprado', 100, 30, 8);
 
--- NÃO TESTADO 
 -- Adicionando para AMIGOS
 INSERT INTO AMIGOS (ce_id_perfil, ce_nome_perfil) VALUES
-(7, 'Fernanda Dias'), 1
-(29, 'Amanda Rodrigues'), 2 
-(15, 'Pedro Teixeira'), 3 
-(18, 'Fábio Cruz'), 4
-(23, 'Julia Santos'), 5 
-(14, 'Márcio Henriques'), 6
-(8, 'Natália Nunes'), 7
-(36, 'Carlos Silva'), 8 
-(10, 'Ricardo Moreira'), 9 
-(46, 'Adriana Gonçalves'), 10
-(1, 'Marcelo Martins'), 11
-(50, 'Thiago Moreira'), 12
-(2, 'José Melo'), 13
-(38, 'João Marques'),14
-(21, 'Renata Alves'),15
-(9, 'Raquel Pereira'),16
-(24, 'Larissa Tavares'),17
-(37, 'Débora Araújo'),18
-(4, 'Marcelo Monteiro'),19
-(31, 'Vinícius Freitas'),20
-(11, 'Cristiane Carvalho'),21
-(30, 'Fernanda Pinheiro'),22
-(28, 'Marcelo Marques'),23
-(39, 'Anderson Pinheiro'),24
-(19, 'Cláudia Santos'),25
-(3, 'Ricardo Moreira'),26
-(25, 'Márcio Araújo'),27
-(12, 'Raquel Santos'),28
-(16, 'Raquel Moreira'),29
-(44, 'Natália Santos');30
+(1, 'Marcelo Martins'),
+(2, 'Adriana Gonçalves'),
+(3, 'Ricardo Moreira 1'),
+(4, 'Marcelo Gonçalves 2'),
+(5, 'Marcelo Monteiro 3'),
+(6, 'Thiago Moreira 4'),
+(7, 'Fernanda Dias 5'),
+(8, 'Natália Nunes 6'),
+(9, 'José Melo 7'),
+(10, 'Roberto Judas'),
+(11, 'Cristiane Orvalho'),
+(12, 'Raquel Pereira'),
+(13, 'Sandra Cardoso'),
+(14, 'Márcio Henriques'),
+(15, 'Pedro Teixeira'),
+(16, 'Raquel Moreira'),
+(17, 'Raquel Santoss'),
+(18, 'Fábio Cruz'),
+(19, 'Cláudia Santos'),
+(20, 'Anderson Roberto'),
+(21, 'Renata Alves 19'),
+(22, 'Camila Nunez'),
+(23, 'Julia Santoz'),
+(24, 'Larissa Tavarez'),
+(25, 'Márcio Araújos 08'),
+(26, 'Beatriz Azevedoz'),
+(27, 'Débora Marques 35'),
+(28, 'Marcelo Marques 10'),
+(29, 'Amanda Rodriguez 47'),
+(30, 'Fernanda Pinheiro 28');
 
--- NÃO TESTADO 
 -- Adicionando para AMIGOS
-INSERT INTO amigos_perfil (tempo_jogado_junto, dt_inicio, ce_id_amigo, ce_id_perfil) VALUES
-(123, "05/02/2024", 1, 29),
-(156, "15/01/2024", 3, 18),
-(274, "22/03/2024", 5, 14),
-(398, "10/04/2024", 7, 36),
-(312, "17/02/2024", 9, 46),
-(220, "01/03/2024", 11, 50),
-(150, "26/03/2024", 13, 38),
-(375, "12/02/2024", 15, 9),
-(291, "20/04/2024", 17, 37),
-(256, "30/03/2024", 19, 31),
-(369, "11/01/2024", 21, 30),
-(481, "29/02/2024", 23, 39),
-(112, "23/04/2024", 25, 3),
-(375, "16/03/2024", 27, 12),
-(257, "02/02/2024", 29, 44),
-(208, "03/01/2024", 1, 15),
-(399, "28/02/2024", 3, 18),
-(300, "14/03/2024", 5, 8),
-(156, "25/01/2024", 7, 10),
-(311, "31/03/2024", 9, 1),
-(475, "20/01/2024", 11, 2),
-(201, "21/02/2024", 13, 21),
-(218, "22/01/2024", 15, 24),
-(392, "19/03/2024", 17, 4),
-(125, "03/05/2024", 19, 11),
-(236, "04/04/2024", 21, 28),
-(167, "19/01/2024", 23, 19),
-(300, "08/02/2024", 25, 25),
-(167, "19/01/2024", 27, 16),
-(300, "08/02/2024", 29, 7);
+DO $$
+DECLARE
+    num_amigos INT;
+    num_perfis INT;
+    i INT := 1;
+    amigo_id INT;
+BEGIN
+    SELECT COUNT(*) INTO num_amigos FROM AMIGOS;
+    SELECT COUNT(*) INTO num_perfis FROM PERFIL;
 
--- NÃO TESTADO 
+    WHILE i <= 50 LOOP
+        -- Seleciona um amigo aleatório
+        SELECT cp_id_amigo INTO amigo_id FROM AMIGOS OFFSET floor(random() * num_amigos) LIMIT 1;
+
+        -- Insere uma amizade aleatória para o amigo selecionado
+        INSERT INTO amigos_perfil (tempo_jogado_juntos, dt_inicio, ce_id_amigo, ce_id_perfil)
+        SELECT
+            (random() * 1000)::int,
+            to_char(date '2020-01-01' + (random() * 1460)::int, 'YYYY-MM-DD'),
+            amigo_id,
+            (random() * (num_perfis - 1) + 1)::int
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM amigos_perfil ap
+            WHERE ap.ce_id_amigo = amigo_id AND ap.ce_id_perfil = (random() * (num_perfis - 1) + 1)::int
+        );
+
+        -- Incrementa o contador somente se a inserção foi bem-sucedida
+        IF FOUND THEN
+          i := i + 1;
+        END IF;
+
+    END LOOP;
+END $$;
+
 -- Adicionando para AMIGOS
 INSERT INTO GRUPO (nome, descrição, numero_participantes) VALUES 
 ('Mestres do RPG', 'Para jogadores de RPG de mesa e online. Compartilhando histórias e dicas.', 75);
@@ -487,9 +444,7 @@ INSERT INTO GRUPO (nome, descrição, numero_participantes) VALUES
 ('Análise de Jogos', 'Debates e análises sobre os jogos mais recentes.', 70),
 ('Sekiro BR', 'Para jogadores de Sekiro: Shadows Die Twice no Brasil.', 45);
 
--- NÃO TESTADO 
 -- Adicionando para grupos_perfil
--- Calcula o número total de grupos e perfis
 DO $$ 
 DECLARE
     num_grupos INT;
@@ -501,6 +456,6 @@ BEGIN
     -- Insere registros aleatórios na tabela grupo_perfil
     INSERT INTO grupo_perfil (ce_id_grupo, ce_id_perfil)
     SELECT (random() * (num_grupos - 1) + 1)::int, (random() * (num_perfis - 1) + 1)::int
-    FROM generate_series(1, 500); -- Insere 500 registros aleatórios
+    FROM generate_series(1, 200); -- Insere 500 registros aleatórios
 
 END $$;
