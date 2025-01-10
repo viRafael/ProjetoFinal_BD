@@ -28,46 +28,30 @@ EXCEPTION
 END;
 $$;
 
+-- Teste 1
+CALL adicionar_jogo_ao_acervo(1, 50, 'Comprado', 27);
+
+-- Teste 2
+CALL adicionar_jogo_ao_acervo(1, 49, 'Desejo', 10);
+
 -- 2.
--- Adiciona uma relação de amizade entre dois perfis. Verifica se a amizade já existe e se os perfis existem.
-CREATE OR REPLACE PROCEDURE adicionar_amigo(
-    p_id_perfil1 INT,
-    p_id_perfil2 INT
+-- Crie um procedimento armazenado que adicione um novo grupo. 
+CREATE OR REPLACE PROCEDURE adicionar_grupo(
+    p_nome VARCHAR(40),
+    p_descricao VARCHAR(120)
 )
 LANGUAGE plpgsql
 AS $$
 BEGIN
-    -- Verifica se os perfis existem
-    IF NOT EXISTS (SELECT 1 FROM PERFIL WHERE cp_id_perfil = p_id_perfil1) THEN
-        RAISE EXCEPTION 'Perfil com ID % não encontrado.', p_id_perfil1;
-    END IF;
-
-    IF NOT EXISTS (SELECT 1 FROM PERFIL WHERE cp_id_perfil = p_id_perfil2) THEN
-        RAISE EXCEPTION 'Perfil com ID % não encontrado.', p_id_perfil2;
-    END IF;
-
-    -- Verifica se a amizade já existe (em ambas as direções)
-    IF EXISTS (
-        SELECT 1
-        FROM AMIGOS a1
-        JOIN AMIGOS a2 ON a1.ce_id_perfil = p_id_perfil1 AND a2.ce_id_perfil = p_id_perfil2
-    ) THEN
-        RAISE NOTICE 'A amizade entre os perfis % e % já existe.', p_id_perfil1, p_id_perfil2;
-    ELSE
-        -- Adiciona a amizade (em ambas as direções para ser bidirecional)
-        INSERT INTO AMIGOS (ce_id_perfil, ce_nome_perfil)
-          SELECT p.cp_id_perfil, p.nome
-          FROM PERFIL p
-          WHERE p.cp_id_perfil = p_id_perfil1;
-        INSERT INTO AMIGOS (ce_id_perfil, ce_nome_perfil)
-          SELECT p.cp_id_perfil, p.nome
-          FROM PERFIL p
-          WHERE p.cp_id_perfil = p_id_perfil2;
-
-        RAISE NOTICE 'Amizade entre os perfis % e % adicionada com sucesso.', p_id_perfil1, p_id_perfil2;
-    END IF;
-EXCEPTION
-    WHEN OTHERS THEN
-        RAISE EXCEPTION 'Erro ao adicionar amizade: %', SQLERRM;
+    INSERT INTO GRUPO (nome, descrição, numero_participantes)
+    VALUES (p_nome, p_descricao, 0);
+COMMIT;
 END;
 $$;
+
+
+-- Teste 1
+CALL adicionar_grupo("Amantes de RPG's", "Para todos aqueles que amam RPG.");
+
+-- Teste 2
+CALL adicionar_grupo("teste", "testando");
