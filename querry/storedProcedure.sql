@@ -28,12 +28,6 @@ EXCEPTION
 END;
 $$;
 
--- Teste 1
-CALL adicionar_jogo_ao_acervo(1, 50, 'Comprado', 27);
-
--- Teste 2
-CALL adicionar_jogo_ao_acervo(1, 49, 'Desejo', 10);
-
 -- 2.
 -- Crie um procedimento armazenado que adicione um novo grupo. 
 CREATE OR REPLACE PROCEDURE adicionar_grupo(
@@ -48,10 +42,3 @@ BEGIN
 COMMIT;
 END;
 $$;
-
-
--- Teste 1
-CALL adicionar_grupo("Amantes de RPG's", "Para todos aqueles que amam RPG.");
-
--- Teste 2
-CALL adicionar_grupo("teste", "testando");
