@@ -3,8 +3,7 @@ CREATE TABLE PERFIL (
     nome varchar(30) UNIQUE,  
     apelido varchar(20) NOT NULL,  
     email varchar(40) NOT NULL UNIQUE,  
-    numero_telefone INT,  
-    ce_id_acervo INT -- CHAVE ESTRANGEIRA
+    numero_telefone INT
 ); 
 
 CREATE TABLE JOGOS ( 
@@ -61,11 +60,6 @@ CREATE TABLE grupo_perfil (
 ); 
 
 -- ADICIONANDO AS CONTRAINS
--- Adicionando para PERFIL
-ALTER TABLE PERFIL
-ADD FOREIGN KEY(ce_id_acervo) 
-REFERENCES ACERVO (cp_id_acervo);
-
 -- Adicionando para JOGOS
 ALTER TABLE JOGOS
 ADD FOREIGN KEY(ce_id_categoria) 

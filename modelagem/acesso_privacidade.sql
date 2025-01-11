@@ -1,4 +1,4 @@
--- 1. ADM
+- 1. ADM
 -- Criar o usuário administrador
 CREATE USER admin WITH PASSWORD 'admin_password';
 

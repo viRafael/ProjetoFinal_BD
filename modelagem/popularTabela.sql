@@ -110,7 +110,7 @@ INSERT INTO PERFIL (nome, apelido, email, numero_telefone) VALUES
 ('Rodrigo Moreira', 'RodMor43', 'rodrigo.moreira43@outlook.com', 187653),
 ('Bruna Dias', 'BruDia44', 'bruna.dias44@yahoo.com.br', 8074080),
 ('Natália Santos 45', 'NatSan45', 'natália.santos45@hotmail.com', 42155),
-('Pedro Arrocha', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001), -- Modificado
+('Pedro Arrocha', 'AdrGon3', 'adriana.gonçalves3@yahoo.com.br', 03736001), 
 ('Ricardo Moreira 12', 'RicMor4', 'ricardo.moreira4@outlook.com', 2718738),
 ('Marcelo Gonçalves 13', 'MarGon5', 'marcelo.gonçalves5@yahoo.com.br', 02007166),
 ('Marcelo Monteiro 14', 'MarMon6', 'marcelo.monteiro26@gmail.com', 554834),
@@ -118,7 +118,7 @@ INSERT INTO PERFIL (nome, apelido, email, numero_telefone) VALUES
 ('Fernanda Dias 16', 'FerDia8', 'fernanda.dias8@hotmail.com', 3374020),
 ('Natália Nunes 17', 'NatNun', 'natália.nunes23@yahoo.com.br', 26744143),
 ('José Melo Junior 18', 'JosMel10', 'josé.melo10@bol.com.br', 718448),
-('Ricardo Augusto', 'RicMor', 'ricardo.moreira6@outlook.com', 22458007), -- Modificado
+('Ricardo Augusto', 'RicMor', 'ricardo.moreira6@outlook.com', 22458007), 
 ('Cristiane Carvalho', 'CriCar12', 'cristiane.carvalho12@hotmail.com', 37827218),
 ('Raquel Pereiras', 'RaqPer13', 'raquel.pereira143@yahoo.com.br', 826367),
 ('Sandra Cardosos', 'SanCar14', 'sandra.cardoso134@hotmail.com', 15066),

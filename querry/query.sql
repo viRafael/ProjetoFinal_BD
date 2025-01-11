@@ -29,7 +29,7 @@ GROUP BY p.nome
 ORDER BY numero_de_amigos DESC; -- Ordena para mostrar quem tem mais amigos primeiro
 
 -- 5. 
---  Quais as categorias de jogos que possuem mais de 5 jogos?
+-- Quais as categorias de jogos que possuem mais de 5 jogos?
 SELECT c.nome
 FROM CATEGORIA c
 JOIN JOGOS j ON c.cp_id_categoria = j.ce_id_categoria
