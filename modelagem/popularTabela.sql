@@ -408,7 +408,7 @@ END $$;
 
 -- Adicionando para AMIGOS
 INSERT INTO GRUPO (nome, descrição, numero_participantes) VALUES 
-('Mestres do RPG', 'Para jogadores de RPG de mesa e online. Compartilhando histórias e dicas.', 75);
+('Mestres do RPG', 'Para jogadores de RPG de mesa e online. Compartilhando histórias e dicas.', 75),
 ('Estrategistas de Tabuleiro', 'Amantes de jogos de tabuleiro modernos e clássicos. Encontros e torneios.', 50),
 ('Gamers de Ação', 'Para quem curte jogos de tiro, luta e aventura. Dicas e gameplays.', 120),
 ('Simuladores de Voo', 'Pilotos virtuais compartilhando experiências e mods.', 35),
