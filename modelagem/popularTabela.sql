@@ -236,110 +236,106 @@ INSERT INTO JOGOS (nome, preco, data_lancamento, ce_id_categoria) VALUES
 ('Kingdom Hearts IV: A Busca pela Luz', 89.99, '2024-12-17', 22),
 ('Dragon Age: Dreadwolf', 84.99, '2025-03-04', 14),
 ('Mass Effect 5', 89.99, '2024-10-29', 8),
-('The Elder Scrolls VI: Redfall', 99.99, '2025-06-24', 30);
+('The Elder Scrolls VI: Redfall', 99.99, '2025-06-24', 30),
+('A Plague Tale: Requiem', 69.99, '2024-05-20', 5),
+('The Witcher 4: Novos Horizontes', 89.99, '2025-01-15', 3),
+('Elden Ring: A Grande Guerra', 79.90, '2025-07-30', 16),
+('Sekiro: Shadows Die Twice 2', 74.90, '2024-03-22', 13),
+('Ghostwire: Tokyo 2', 69.95, '2024-06-12', 18),
+('Demon’s Souls II', 84.90, '2025-04-05', 15),
+('Final Fantasy XVI', 99.99, '2024-01-10', 22),
+('Assassin’s Creed: Valhalla II', 69.90, '2025-02-28', 12),
+('CyberConnect 2: The New Frontier', 79.99, '2024-09-15', 20),
+('Persona 6', 74.90, '2025-10-10', 24),
+('Tales of Arise 2', 84.95, '2025-11-05', 21),
+('Forza Horizon 6', 89.90, '2025-05-14', 6),
+('Microsoft Flight Simulator 2025', 99.99, '2025-08-19', 11),
+('Far Cry 7: A Nova Fronteira', 69.95, '2024-07-16', 7),
+('Fable 4', 74.90, '2025-03-10', 10),
+('Star Wars: Jedi Survivor', 79.99, '2024-12-12', 9),
+('Tekken 8', 64.90, '2025-01-30', 14),
+('Mortal Kombat 12', 89.99, '2025-02-20', 17),
+('FIFA Street', 69.90, '2025-06-21', 1),
+('NBA 2K24', 79.90, '2024-10-16', 2),
+('Gran Turismo 8', 84.90, '2025-03-07', 19),
+('WWE 2K24', 74.99, '2024-11-25', 23),
+('Overwatch 3', 89.99, '2025-06-11', 26),
+('Splatoon 3: A Revolução das Cores', 64.95, '2024-04-18', 8),
+('Bayonetta 4', 79.99, '2025-09-29', 4),
+('Hollow Knight: Silksong', 44.99, '2024-12-05', 30),
+('Metroid Prime 4', 79.90, '2025-10-30', 27),
+('Dragon Ball Z: Kakarot 2', 69.99, '2024-01-02', 29),
+('Dying Light 3', 74.99, '2025-05-24', 25),
+('Outriders 2', 59.99, '2025-07-17', 18),
+('Ghost Recon: Frontlines', 69.90, '2024-03-09', 1),
+('Battlefield 6', 79.90, '2025-08-28', 24),
+('Call of Duty: Modern Warfare 5', 89.99, '2025-11-20', 22),
+('Watch Dogs 4', 69.95, '2025-03-11', 23),
+('Borderlands 4', 84.90, '2025-07-04', 25),
+('Tomb Raider: A Nova Era', 74.99, '2025-02-22', 19),
+('Halo: Infinite War', 79.99, '2025-12-26', 12),
+('The Outer Worlds 2', 64.95, '2025-05-15', 8),
+('Dragon Quest XI: A Continuação', 89.90, '2025-04-11', 26),
+('The Last Guardian 2', 74.90, '2025-01-29', 6),
+('Etrian Odyssey X', 59.99, '2025-09-20', 30),
+('Ni no Kuni 3', 69.90, '2025-08-01', 15),
+('Yakuza 8: To the End', 84.90, '2025-11-16', 17),
+('Persona 5: Dancing in Starlight 2', 64.99, '2025-04-20', 5),
+('Halo Wars 3', 69.90, '2025-02-14', 14),
+('Final Fantasy IX Remake', 79.99, '2025-03-15', 21),
+('GreedFall II', 64.90, '2025-06-07', 15),
+('Avatar: Frontiers of Pandora', 84.99, '2025-10-18', 9),
+('Hades II', 49.99, '2025-04-22', 4),
+('State of Decay 3', 69.90, '2025-12-30', 26);
 
 -- Popular tabela ACERVO
-INSERT INTO ACERVO (tipo, ce_id_perfil, ce_id_jogo, ce_id_conquista) VALUES
-('Desejo', 1, 10, 5),
-('Desejo', 2, 22, 12),
-('Desejo', 3, 14, 3),
-('Desejo', 4, 36, 25),
-('Desejo', 5, 40, 19),
-('Desejo', 6, 18, 24),
-('Desejo', 7, 5, 9),
-('Desejo', 8, 29, 17),
-('Desejo', 9, 33, 22),
-('Desejo', 10, 42, 7),
-('Desejo', 11, 20, 10),
-('Desejo', 12, 26, 15),
-('Desejo', 13, 11, 30),
-('Desejo', 14, 7, 1),
-('Desejo', 15, 48, 6),
-('Desejo', 16, 2, 13),
-('Desejo', 17, 50, 20),
-('Desejo', 18, 28, 29),
-('Desejo', 19, 44, 4),
-('Desejo', 20, 39, 21),
-('Desejo', 21, 30, 8),
-('Desejo', 22, 45, 26),
-('Desejo', 23, 8, 2),
-('Desejo', 24, 32, 14),
-('Desejo', 25, 3, 27),
-('Desejo', 26, 15, 16),
-('Desejo', 27, 37, 18),
-('Desejo', 28, 46, 11),
-('Desejo', 29, 12, 23),
-('Desejo', 30, 25, 28),
-('Desejo', 31, 17, 3),
-('Desejo', 32, 23, 20),
-('Desejo', 33, 34, 5),
-('Desejo', 34, 6, 9),
-('Desejo', 35, 9, 12),
-('Desejo', 36, 35, 15),
-('Desejo', 37, 41, 30),
-('Desejo', 38, 13, 7),
-('Desejo', 39, 49, 26),
-('Desejo', 40, 4, 1),
-('Desejo', 41, 21, 14),
-('Desejo', 42, 16, 19),
-('Desejo', 43, 27, 25),
-('Desejo', 44, 19, 2),
-('Desejo', 45, 38, 11),
-('Desejo', 46, 47, 17),
-('Desejo', 47, 24, 28),
-('Desejo', 48, 15, 6),
-('Desejo', 49, 43, 24),
-('Desejo', 50, 31, 22),
-('Comprado', 51, 45, 22),
-('Comprado', 52, 19, 3),
-('Comprado', 53, 33, 10),
-('Comprado', 54, 48, 26),
-('Comprado', 55, 6, 1),
-('Comprado', 56, 12, 17),
-('Comprado', 57, 29, 19),
-('Comprado', 58, 21, 25),
-('Comprado', 59, 40, 8),
-('Comprado', 60, 4, 15),
-('Comprado', 61, 50, 20),
-('Comprado', 62, 37, 12),
-('Comprado', 63, 16, 7),
-('Comprado', 64, 2, 24),
-('Comprado', 65, 30, 5),
-('Comprado', 66, 8, 14),
-('Comprado', 67, 35, 30),
-('Comprado', 68, 1, 9),
-('Comprado', 69, 17, 13),
-('Comprado', 70, 38, 27),
-('Comprado', 71, 25, 4),
-('Comprado', 72, 11, 6),
-('Comprado', 73, 44, 18),
-('Comprado', 74, 10, 2),
-('Comprado', 75, 20, 11),
-('Comprado', 76, 32, 29),
-('Comprado', 77, 42, 15),
-('Comprado', 78, 49, 8),
-('Comprado', 79, 43, 26),
-('Comprado', 80, 39, 23),
-('Comprado', 81, 3, 10),
-('Comprado', 82, 28, 3),
-('Comprado', 83, 46, 14),
-('Comprado', 84, 26, 26),
-('Comprado', 85, 34, 30),
-('Comprado', 86, 41, 19),
-('Comprado', 87, 24, 2),
-('Comprado', 88, 15, 20),
-('Comprado', 89, 14, 17),
-('Comprado', 90, 5, 1),
-('Comprado', 91, 18, 16),
-('Comprado', 92, 9, 6),
-('Comprado', 93, 36, 9),
-('Comprado', 94, 22, 5),
-('Comprado', 95, 7, 24),
-('Comprado', 96, 27, 11),
-('Comprado', 97, 13, 15),
-('Comprado', 98, 23, 12),
-('Comprado', 99, 44, 4),
-('Comprado', 100, 30, 8);
+DO $$
+DECLARE
+    v_perfil_id PERFIL.cp_id_perfil%TYPE;
+    v_jogo_id JOGOS.cp_id_jogo%TYPE;
+    v_conquista_id CONQUISTA.cp_id_conquista%TYPE;
+    v_num_jogos INTEGER;
+    v_num_conquistas INTEGER;
+    v_tipo VARCHAR(10);
+BEGIN
+    FOR v_perfil_id IN SELECT cp_id_perfil FROM PERFIL LOOP
+        v_num_jogos := floor(random() * 5) + 1;
+
+        FOR i IN 1..v_num_jogos LOOP
+            -- Seleciona um jogo aleatório que o perfil ainda NÃO possui
+            SELECT cp_id_jogo INTO v_jogo_id
+            FROM JOGOS
+            WHERE NOT EXISTS ( -- Usando NOT EXISTS para melhor performance
+                SELECT 1
+                FROM ACERVO
+                WHERE ce_id_perfil = v_perfil_id AND ce_id_jogo = JOGOS.cp_id_jogo
+            )
+            ORDER BY random()
+            LIMIT 1;
+
+            -- Verifica se um jogo foi encontrado (evita erro se não houver jogos disponíveis)
+            IF v_jogo_id IS NOT NULL THEN
+              v_num_conquistas := floor(random() * 3) + 1;
+
+              FOR j IN 1..v_num_conquistas LOOP
+                  SELECT cp_id_conquista INTO v_conquista_id
+                  FROM CONQUISTA
+                  ORDER BY random()
+                  LIMIT 1;
+
+                  IF random() < 0.5 THEN
+                      v_tipo := 'Comprado';
+                  ELSE
+                      v_tipo := 'Desejo';
+                  END IF;
+
+                  INSERT INTO ACERVO (tipo, ce_id_perfil, ce_id_jogo, ce_id_conquista)
+                  VALUES (v_tipo, v_perfil_id, v_jogo_id, v_conquista_id);
+              END LOOP;
+            END IF;
+        END LOOP;
+    END LOOP;
+END $$;
 
 -- Adicionando para AMIGOS
 INSERT INTO AMIGOS (ce_id_perfil, ce_nome_perfil) VALUES
@@ -374,7 +370,7 @@ INSERT INTO AMIGOS (ce_id_perfil, ce_nome_perfil) VALUES
 (29, 'Amanda Rodriguez 47'),
 (30, 'Fernanda Pinheiro 28');
 
--- Adicionando para AMIGOS
+-- Adicionando para amigos_perfil
 DO $$
 DECLARE
     num_amigos INT;
