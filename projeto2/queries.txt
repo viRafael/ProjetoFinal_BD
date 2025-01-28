@@ -1,0 +1,247 @@
+Q - 1
+-- Quais os nomes dos perfis e os nomes dos jogos que eles têm em seu acervo, 
+listando também o tipo do acervo?
+[
+  {
+    $unwind: "$acervo"
+  },
+  {
+    $project: {
+      perfil_nome: 1,
+      "acervo.jogo.nome": 1,
+      "acervo.tipo": 1
+    }
+  }
+]
+
+Q - 2
+-- Qual o preço médio dos jogos em cada categoria?
+[
+  {
+    $unwind: "$acervo"
+  },
+  {
+    $group: {
+      _id: "$acervo.jogo.categoria.nome",
+      preco_medio: {
+        $avg: "$acervo.jogo.preco"
+      }
+    }
+  }
+]
+
+Q - 3
+-- Qual é o nome dos jogos e a categoria a qual eles pertencem?
+[
+  {
+    $unwind: "$acervo"
+  },
+  {
+    $project: {
+      jogo_nome: "$acervo.jogo.nome",
+      categoria_nome:
+        "$acervo.jogo.categoria.nome"
+    }
+  }
+]
+
+Q - 4
+-- Quantos amigos cada perfil tem?
+[
+  {
+    "$project": {
+      "perfil_nome": 1,
+      "num_amigos": { "$size": "$amigos" }
+    }
+  }
+]
+
+Q - 5
+-- Quais as categorias de jogos que possuem mais de 5 jogos?
+[
+    { "$unwind": "$acervo" },
+    { "$unwind": "$acervo.jogo.categoria" },
+    { "$group": { "_id": "$acervo.jogo.categoria.nome", "count": { "$sum": 1 } } },
+    { "$match": { "count": { "$gt": 5 } } }
+]
+
+Q - 6
+-- Quantas conquistas estão associadas a cada perfil?
+[
+  {
+    "$unwind": "$conquistas"
+  },
+  {
+    "$group": {
+      "_id": "$_id",  // Agrupa por _id do perfil
+      "nomesPerfil": { "$first": "$perfil_nome" },  // Captura o nome do perfil
+      "totalConquistas": {
+        "$sum": 1  // Conta o número de conquistas
+      }
+    }
+  }
+]
+
+Q - 7 
+-- Quais perfis têm amigos em comum? (Exemplo: perfis com o mesmo amigo)
+[
+  {
+    "$unwind": "$amigos"
+  },
+  {
+    "$group": {
+      "_id": "$amigos.amigo_id",
+      "profiles": {
+        "$addToSet": "$_id"
+      }
+    }
+  },
+  {
+    "$match": {
+      "profiles.1": {
+        "$exists": true
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "Data",
+      "localField": "profiles",
+      "foreignField": "_id",
+      "as": "common_friend_profiles"
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "amigo_id": "$_id",
+      "common_friend_profiles._id": 1,
+      "common_friend_profiles.perfil_nome": 1,
+      "common_friend_profiles.email": 1
+    }
+  }
+]
+
+Q - 8
+-- Quais perfis possuem jogos de determinadas categorias e também conquistaram conquistas?
+[
+  {
+    "$match": {
+      "acervo.jogo.categoria.categoria_id": { "$exists": true },
+      "conquistas.conquista_id": { "$exists": true }
+    }
+  },
+  {
+    "$project": {
+      "perfil_nome": "$perfil.perfil_nome",  // Nome do perfil
+      "jogo_nome": "$acervo.jogo.jogo_nome",  // Nome do jogo
+      "categoria_nome": "$acervo.jogo.categoria.categoria_nome",  // Nome da categoria
+      "conquista_nome": "$conquistas.conquista_nome"  // Nome da conquista
+    }
+  }
+]
+
+Q - 9
+-- Quais perfis jogaram juntos mais tempo? (Baseado no tempo total jogado)
+[
+  {
+    "$unwind": "$amigos"  // Desmonta o array de amigos
+  },
+  {
+    "$match": {
+      "$expr": {
+        "$ne": ["$amigos.amigo_id", "$_id"]  // Garante que o amigo_id não seja o mesmo que o perfil
+      }
+    }
+  },
+  {
+    "$group": {
+      "_id": "$amigos.amigo_id",  // Agrupa pelos amigos distintos
+      "total_tempo_jogado": {
+        "$sum": "$amigos.tempo_jogado.tempo_jogado_juntos"  // Soma o tempo jogado com o amigo
+      },
+      "perfil_nome": { "$first": "$perfil_nome" },  // Nome do perfil
+      "amigo_nome": { "$first": "$amigos.amigo_nome" }  // Nome do amigo
+    }
+  },
+  {
+    "$sort": {
+      "total_tempo_jogado": -1  // Ordena pelo maior tempo jogado
+    }
+  }
+]
+
+Q - 10
+-- Quais pares de perfis compartilham mais jogos em seus acervos? 
+[
+  {
+    $unwind: "$acervo"
+  },
+  {
+    $group: {
+      _id: "$acervo.jogo.nome",
+      profiles: {
+        $addToSet: "$perfil_nome"
+      }
+    }
+  },
+  {
+    $unwind: "$profiles"
+  },
+  {
+    $lookup: {
+      from: "Data",
+      localField: "profiles",
+      foreignField: "perfil_nome",
+      as: "profile_data"
+    }
+  },
+  {
+    $unwind: "$profile_data"
+  },
+  {
+    $match: {
+      $expr: {
+        $ne: [
+          "$profile_data.perfil_nome",
+          "$profiles"
+        ]
+      }
+    }
+  },
+  {
+    $group: {
+      _id: {
+        profile1: "$profiles",
+        profile2: "$profile_data.perfil_nome"
+      },
+      shared_games_count: {
+        $sum: 1
+      }
+    }
+  },
+  {
+    $sort: {
+      shared_games_count: -1
+    }
+  },
+  {
+    $group: {
+      _id: "$_id.profile1",
+      shared_profiles: {
+        $push: {
+          profile: "$_id.profile2",
+          count: "$shared_games_count"
+        }
+      }
+    }
+  },
+  {
+    $project: {
+      profile: "$_id",
+      shared_profiles: {
+        $slice: ["$shared_profiles", 10]
+      }
+    }
+  }
+]

@@ -1,0 +1,35 @@
+V - 1 
+-- Jogos por Categoria com Número de Jogos e Preço Médio 
+[
+  { 
+    "$unwind": "$acervo" 
+  },
+  {
+    "$group": {
+      "_id": "$acervo.jogo.categoria.nome",
+      "numero_de_jogos": { "$sum": 1 },
+      "preco_medio": { "$avg": "$acervo.jogo.preco" }
+    }
+  }
+]
+
+V - 2
+-- Resumo dos Acervo com Informações de Categoria e Usuário
+[
+  {
+    $unwind: "$acervo"
+  },
+  {
+    $project: {
+      jogo_nome: "$acervo.jogo.nome",
+      jogo_preco: "$acervo.jogo.preco",
+      categoria_nome: "$acervo.jogo.categoria.nome",
+      categoria_descricao: "$acervo.jogo.categoria.descricao",
+      categoria_id: "$acervo.jogo.categoria.categoria_id",
+      acervo_tipo: "$acervo.tipo",
+      acervo_id: "$acervo.acervo_id",
+      perfil_nome: 1,
+      email: 1
+    }
+  }
+]
